@@ -22,8 +22,8 @@ var measure = function() {
       var leadingvariation = minld + ((maxld - minld) / (tb_maxw - tb_minw)) * (msr_width - tb_minw);
       var calcleading  = msr_width / leadingvariation;
 
-      console.log(findEls(tb_id))
-      each(findEls(tb_id), function(el){
+      // console.log(findEls(tb_id))
+      each($(tb_id), function(el){
         el.style.fontSize = calctypesize + 'em';
         el.style.lineHeight = calcleading;
       })
