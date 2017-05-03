@@ -20,9 +20,18 @@
   <!-- This JSON code is kind of like a style sheet and is used to scale text elements. -->
 
   <script>
-    TypeInSlips([{
-      target:"#jupiter p, .saturn p"
-    }]);
+    TypeInSlips([
+      {
+        target:".saturn p",
+        minFontSize: 1.9,
+        maxFontSize: 2.6,
+      },
+      {
+        target:"#jupiter p",
+        minFontSize: 2.4,
+        maxFontSize: 3.6,
+      }
+    ]);
   </script>
 
   <!-- / -->
