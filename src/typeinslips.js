@@ -4,7 +4,22 @@ var measure = function() {
     onResize(run);
   });
   function run(){
-    each($(textblock['textblocks']), function(block){
+    each(textblock['textblocks'], function(block){
+      // loop through all the provided textblocks
+      
+      each(findEls(block['id']), function(el){
+        // loop through each element that matches the textblock's selector
+        var measurements = calc(el, block);
+        if (measurements) {
+          el.style.fontSize = measurements.fontSize + 'em';
+          el.style.lineHeight = measurements.lineHeight;
+        }
+      })
+    });
+  }
+  function calc(el, block) {
+    // returns object with calculated fontSize and lineHeight for an element.
+    if (el) {
       var tb_id = block['id'];
       var tb_minw = block['minwdth'];
       var tb_maxw = block['maxwdth'];
@@ -12,7 +27,7 @@ var measure = function() {
       var tb_maxf = block['maxfs'];
       var tb_minl = block['minld'];
       var tb_maxl = block['maxld'];
-      var msr_width = $(tb_id).parent().width();
+      var msr_width = elWidth(el.parentNode);
       var minld   = tb_minw / tb_minl;
       var maxld   = tb_maxw / tb_maxl;
 
@@ -22,14 +37,14 @@ var measure = function() {
       var leadingvariation = minld + ((maxld - minld) / (tb_maxw - tb_minw)) * (msr_width - tb_minw);
       var calcleading  = msr_width / leadingvariation;
 
-      // console.log(findEls(tb_id))
-      each($(tb_id), function(el){
-        el.style.fontSize = calctypesize + 'em';
-        el.style.lineHeight = calcleading;
-      })
-    });
+      return {
+        fontSize: calctypesize,
+        lineHeight: calcleading
+      }
+    }
   }
   function onDocReady(callback){
+    // Listener for DOM ready. Replaces $(document).ready
     function modernBrowser(){
       if (
           document.readyState === "complete" ||
@@ -50,7 +65,6 @@ var measure = function() {
         }
       });
     }
-
     if (document.addEventListener) {
       modernBrowser();
     } else if (document.attachEvent) {
@@ -58,6 +72,7 @@ var measure = function() {
     }
   }
   function onResize(callback){
+    // listener for window resize
     if(window.attachEvent) {
       window.attachEvent('onresize', function() {
         callback && callback();
@@ -70,16 +85,29 @@ var measure = function() {
     }
   }
   function each(items, callback) {
+    // loops through elements of an array
     for (i = 0; i < items.length; i++) { 
       callback && callback(items[i], i);
     }
   }
   function findEls(selector){
-    var els = [document.getElementById(selector)];
-    return els + document.getElementsByClassName(selector);
+    // replaces jquery finder: $('.some-el')
+    return document.querySelectorAll(selector);
   }
-  function parentEl(el) {
-
+  function elWidth(el) {
+    // calculates width, without padding and border width
+    var width = el.offsetWidth;
+    var paddingWidth = parseInt(elStyleVal(el, 'padding-left')) + parseInt(elStyleVal(el, 'padding-right'));
+    var borderWidth =  parseInt(elStyleVal(el, 'border-left-width')) + parseInt(elStyleVal(el, 'border-right-width'))
+    return el.offsetWidth - paddingWidth - borderWidth;
+  }
+  function elStyleVal(el, styleName) {
+    // gets final calculated style values for element. For example, getting the final width or padding in px.
+    if (window.getComputedStyle) {
+      return window.getComputedStyle(el, null).getPropertyValue(styleName)
+    } else {
+      return el.currentStyle[styleName];
+    }
   }
 }
 
