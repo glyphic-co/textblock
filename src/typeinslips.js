@@ -1,14 +1,17 @@
-var measure = function() {
+var TypeInSlips = function(textblocks) {
   onDocReady(function(){
     run();
     onResize(run);
   });
   function run(){
-    each(textblock['textblocks'], function(block){
+    each(textblocks, function(rawBlock){
       // loop through all the provided textblocks
-      
-      each(findEls(block['id']), function(el){
+
+      var block = prepBlockSettings(rawBlock);
+
+      each(findEls(block.target), function(el){
         // loop through each element that matches the textblock's selector
+
         var measurements = calc(el, block);
         if (measurements) {
           el.style.fontSize = measurements.fontSize + 'em';
@@ -20,13 +23,12 @@ var measure = function() {
   function calc(el, block) {
     // returns object with calculated fontSize and lineHeight for an element.
     if (el) {
-      var tb_id = block['id'];
-      var tb_minw = block['minwdth'];
-      var tb_maxw = block['maxwdth'];
-      var tb_minf = block['minfs'];
-      var tb_maxf = block['maxfs'];
-      var tb_minl = block['minld'];
-      var tb_maxl = block['maxld'];
+      var tb_minw = block.minWidth;
+      var tb_maxw = block.maxWidth;
+      var tb_minf = block.minFontSize;
+      var tb_maxf = block.maxFontSize;
+      var tb_minl = block.minLineHeight;
+      var tb_maxl = block.maxLineHeight;
       var msr_width = elWidth(el.parentNode);
       var minld   = tb_minw / tb_minl;
       var maxld   = tb_maxw / tb_maxl;
@@ -42,6 +44,17 @@ var measure = function() {
         lineHeight: calcleading
       }
     }
+  }
+  function prepBlockSettings(block){
+    var defaultSettings = {
+      minWidth: 280,
+      maxWidth: 800,
+      minFontSize: 1.9,
+      maxFontSize: 2.6,
+      minLineHeight: 1.33,
+      maxLineHeight: 1.25
+    }
+    return  Object.assign(defaultSettings, block);
   }
   function onDocReady(callback){
     // Listener for DOM ready. Replaces $(document).ready
@@ -110,5 +123,3 @@ var measure = function() {
     }
   }
 }
-
-measure();
