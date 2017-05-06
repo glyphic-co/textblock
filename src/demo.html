@@ -8,7 +8,7 @@
 
 
   <!-- Needs JQuery -->
-  <script src="http://code.jquery.com/jquery-latest.min.js"></script>
+ <!--  <script src="http://code.jquery.com/jquery-latest.min.js"></script> -->
   <!-- / -->
 
 
@@ -20,17 +20,18 @@
   <!-- This JSON code is kind of like a style sheet and is used to scale text elements. -->
 
   <script>
-    var textblock={
-      textblocks:
-      [{
-        id:".intro p",
-        minwdth:280,
-        maxwdth:800,
-        minfs:1.9,
-        maxfs:2.6,
-        minld:1.33,
-        maxld:1.25
-      }]};
+    TypeInSlips([
+      {
+        target:".saturn p",
+        minFontSize: 1.9,
+        maxFontSize: 2.6,
+      },
+      {
+        target:"#jupiter p",
+        minFontSize: 2.4,
+        maxFontSize: 3.6,
+      }
+    ]);
   </script>
 
   <!-- / -->
@@ -45,11 +46,12 @@
 
   <div class="tbcon">
     <div class="intro textblock">
-
-      <p>The second edition <span class="acdash">–</span> <span class="note">with a <a href="javascript:void(0);" class="Foreword-by-Erik-Spiekermann-1_open" id="frwrdlnk">foreword by Erik Spiekermann</a></span> <span class="acdash">–</span> has over doubled in size, the specimens have been reclassified to modern standards, and the index (now 1/6 of the book) has been deeply cross referenced, allowing you to <span class="acdash">–</span> among other things <span class="acdash">–</span> find the glyphs required for a particular language.</p>
-
+      <div class="saturn">
+        <p>The second edition <span class="acdash">–</span> <span class="note">with a <a href="javascript:void(0);" class="Foreword-by-Erik-Spiekermann-1_open" id="frwrdlnk">foreword by Erik Spiekermann</a></span> <span class="acdash">–</span> has over doubled in size, the specimens have been reclassified to modern standards, and the index (now 1/6 of the book) has been deeply cross referenced, allowing you to <span class="acdash">–</span> among other things <span class="acdash">–</span> find the glyphs required for a particular language.</p>
+      </div>
+    <div id="jupiter">
       <p>This edition goes further back into history for the simple reason that our making and using of type today is fundamentally based on the past. Read a little about type history and you’ll find we’ve actually done most of this stuff before. Read a little more and you’ll see into the future. <span class="note"><nobr>[from the <a href="javascript:void(0);" class="introduction-1_open" id="intrdctnlnk">Introduction</a>]</nobr></span></p>
-
+    </div>
     </div>
   </div>
 
@@ -64,7 +66,7 @@
 
 <!-- Don't worry about this script. It's just used here to set the margins. -->
 <script>
-function substrate(){var a=$(window).width(),b=$(".textblock").width();if(b>800&&$(".textblock").css("max-width","800px"),a>1200)var c="20vw";else var c=a/33/2+"vw";$(".tbcon").css({margin:"0 "+c}),$(".textblock").css({margin:"0 auto"}),$("#vpw").text(a)}function measure(){$(textblock.textblocks).each(function(a){var b=textblock.textblocks[a].id,c=textblock.textblocks[a].minwdth,d=textblock.textblocks[a].maxwdth,e=textblock.textblocks[a].minfs,f=textblock.textblocks[a].maxfs,g=textblock.textblocks[a].minld,h=textblock.textblocks[a].maxld,i=$(window).width(),j=$(b).parent().width(),k=c/g,l=d/h,m=e+(f-e)/(d-c)*(j-c),n=m,o=k+(l-k)/(d-c)*(j-c),p=j/o;$(b).css("font-size",n+"em"),$(b).css("line-height",p);parseInt($(b).css("font-size"));624>i?($(".txt2").removeClass("smpltxt2"),$(".2h3").removeClass("smpl2h3"),$(".ft").removeClass("grid__row")):i>624&&($(".txt2").addClass("smpltxt2"),$(".2h3").addClass("smpl2h3"),$(".ft").addClass("grid__row"))})}$(document).ready(function(a){substrate()}),$(window).resize(function(){substrate()}),$(document).ready(function(a){measure()}),$(window).resize(function(){measure()});
+// function substrate(){var a=$(window).width(),b=$(".textblock").width();if(b>800&&$(".textblock").css("max-width","800px"),a>1200)var c="20vw";else var c=a/33/2+"vw";$(".tbcon").css({margin:"0 "+c}),$(".textblock").css({margin:"0 auto"}),$("#vpw").text(a)}function measure(){$(textblock.textblocks).each(function(a){var b=textblock.textblocks[a].id,c=textblock.textblocks[a].minwdth,d=textblock.textblocks[a].maxwdth,e=textblock.textblocks[a].minfs,f=textblock.textblocks[a].maxfs,g=textblock.textblocks[a].minld,h=textblock.textblocks[a].maxld,i=$(window).width(),j=$(b).parent().width(),k=c/g,l=d/h,m=e+(f-e)/(d-c)*(j-c),n=m,o=k+(l-k)/(d-c)*(j-c),p=j/o;$(b).css("font-size",n+"em"),$(b).css("line-height",p);parseInt($(b).css("font-size"));624>i?($(".txt2").removeClass("smpltxt2"),$(".2h3").removeClass("smpl2h3"),$(".ft").removeClass("grid__row")):i>624&&($(".txt2").addClass("smpltxt2"),$(".2h3").addClass("smpl2h3"),$(".ft").addClass("grid__row"))})}$(document).ready(function(a){substrate()}),$(window).resize(function(){substrate()}),$(document).ready(function(a){measure()}),$(window).resize(function(){measure()});
 </script>
 
 </body>
