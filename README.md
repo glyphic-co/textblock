@@ -1,4 +1,4 @@
-# Type in Slips
+# Galley.js
 
 
 ### To initialize
