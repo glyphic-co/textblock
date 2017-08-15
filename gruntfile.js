@@ -9,9 +9,9 @@ module.exports = function(grunt) {
       options: {
         banner: '/*! <%= pkg.name %> <%= grunt.template.today("yyyy-mm-dd") %> */\n'
       },
-      typeinslips: {
+      galley: {
         files: {
-          'build/typeinslips.min.js': ['src/typeinslips.js']
+          'build/galley.min.js': ['src/galley.js']
         }
       }
     },
@@ -19,7 +19,7 @@ module.exports = function(grunt) {
     watch:{
       scripts: {
         files:['src/demo.html', 'src/demo.css'],
-        tasks:['postcss:dist','uncss','uglify:tdr','cssmin','unclassify'],
+        tasks:['uglify:galley'],
       }
     }
   });
@@ -30,6 +30,6 @@ module.exports = function(grunt) {
 
   // Defaults
   // grunt.registerTask('default', ['postcss:dist','uncss:dist']);
-  grunt.registerTask('default', ['uglify:typeinslips']);
+  grunt.registerTask('default', ['uglify:galley']);
 
 };

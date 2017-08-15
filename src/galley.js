@@ -1,4 +1,4 @@
-var TypeInSlips = function(textblocks) {
+var Galley = function(textblocks) {
   onDocReady(function(){
     run();
     onResize(run);
@@ -99,7 +99,7 @@ var TypeInSlips = function(textblocks) {
   }
   function each(items, callback) {
     // loops through elements of an array
-    for (i = 0; i < items.length; i++) { 
+    for (i = 0; i < items.length; i++) {
       callback && callback(items[i], i);
     }
   }

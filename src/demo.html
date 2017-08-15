@@ -13,23 +13,23 @@
 
 
   <!-- And this little script -->
-  <script src="typeinslips.js"></script>
+  <script src="galley.js"></script>
   <!-- / -->
 
 
   <!-- This JSON code is kind of like a style sheet and is used to scale text elements. -->
 
   <script>
-    TypeInSlips([
+    Galley([
+      {
+        target:"#jupiter p",
+        minFontSize: 1.9,
+        maxFontSize: 2.6
+      },
       {
         target:".saturn p",
         minFontSize: 1.9,
-        maxFontSize: 2.6,
-      },
-      {
-        target:"#jupiter p",
-        minFontSize: 2.4,
-        maxFontSize: 3.6,
+        maxFontSize: 2.6
       }
     ]);
   </script>
