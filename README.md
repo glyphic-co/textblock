@@ -3,7 +3,7 @@
 
 ### To initialize
 ```
-TypeInSlips([{
+Galley([{
   target:".some-element"
 }]);
 ```
@@ -20,7 +20,7 @@ TypeInSlips([{
 Example with extra parameters included
 
 ```
-TypeInSlips([{
+Galley([{
   target:".some-class",
   minWidth: 280,
   maxWidth: 800,
@@ -34,7 +34,7 @@ TypeInSlips([{
 ### Multiple elements with different settings
 
 ```
-TypeInSlips([
+Galley([
   {
     target:".some-class",
     minFontSize: 1.9,
