@@ -99,7 +99,7 @@ var Galley = function(textblocks) {
   }
   function each(items, callback) {
     // loops through elements of an array
-    for (i = 0; i < items.length; i++) {
+    for (var i = 0; i < items.length; i++) {
       callback && callback(items[i], i);
     }
   }
