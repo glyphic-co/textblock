@@ -16,6 +16,7 @@ Galley([{
 - `maxFontSize`: default `2.6`
 - `minLineHeight`: default `1.33`
 - `maxLineHeight`: default `1.25`
+- `units`: default `em`
 
 Example with extra parameters included
 
@@ -27,7 +28,8 @@ Galley([{
   minFontSize: 1.9,
   maxFontSize: 2.6,
   minLineHeight: 1.33,
-  maxLineHeight: 1.25
+  maxLineHeight: 1.25,
+  units: 'rem'
 }]);
 ```
 

@@ -14,7 +14,7 @@ var Galley = function(textblocks) {
 
         var measurements = calc(el, block);
         if (measurements) {
-          el.style.fontSize = measurements.fontSize + 'em';
+          el.style.fontSize = measurements.fontSize + block.units;
           el.style.lineHeight = measurements.lineHeight;
         }
       })
@@ -52,7 +52,8 @@ var Galley = function(textblocks) {
       minFontSize: 1.9,
       maxFontSize: 2.6,
       minLineHeight: 1.33,
-      maxLineHeight: 1.25
+      maxLineHeight: 1.25,
+      units: 'em'
     }
     return  Object.assign(defaultSettings, block);
   }
