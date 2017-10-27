@@ -1,9 +1,9 @@
-# Galley.js
+# Textblock.js
 
 
 ### To initialize
 ```
-Galley([{
+Textblock([{
   target:".some-element"
 }]);
 ```
@@ -21,7 +21,7 @@ Galley([{
 Example with extra parameters included
 
 ```
-Galley([{
+Textblock([{
   target:".some-class",
   minWidth: 280,
   maxWidth: 800,
@@ -36,7 +36,7 @@ Galley([{
 ### Multiple elements with different settings
 
 ```
-Galley([
+Textblock([
   {
     target:".some-class",
     minFontSize: 1.9,

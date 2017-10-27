@@ -9,9 +9,9 @@ module.exports = function(grunt) {
       options: {
         banner: '/*! <%= pkg.name %> <%= grunt.template.today("yyyy-mm-dd") %> */\n'
       },
-      galley: {
+      textblock: {
         files: {
-          'build/galley.min.js': ['src/galley.js']
+          'build/textblock.min.js': ['src/textblock.js']
         }
       }
     },
@@ -19,7 +19,7 @@ module.exports = function(grunt) {
     watch:{
       scripts: {
         files:['src/demo.html', 'src/demo.css'],
-        tasks:['uglify:galley'],
+        tasks:['uglify:textblock'],
       }
     }
   });
@@ -30,6 +30,6 @@ module.exports = function(grunt) {
 
   // Defaults
   // grunt.registerTask('default', ['postcss:dist','uncss:dist']);
-  grunt.registerTask('default', ['uglify:galley']);
+  grunt.registerTask('default', ['uglify:textblock']);
 
 };
