@@ -1,5 +1,16 @@
 # Textblock.js
 
+Textblock provides continuous responsive typesetting beyond standard CSS breakpoints. It adjusts type size and line height to set perfect type across varying screen widths. The script works on top of your current CSS, meaning you may already have a fallback.
+
+It uses minimum and maximum values for font size, leading (line height), and measure (the container width).
+
+The script calculates floating point values based on em sizes defined within the document head:
+
+- Minimum/maximum font size
+- Minimum/maximum font leading (line height)
+- Minimum/maximum container width
+
+The math is easiest if you set the root em (rem) to 10px so em units are base 10, i.e. 2.4em = 24px.
 
 ### To initialize
 ```
