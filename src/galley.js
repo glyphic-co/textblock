@@ -1,4 +1,4 @@
-var Galley = function(textblocks) {
+var Textblock = function(textblocks) {
   onDocReady(function(){
     run();
     onResize(run);
