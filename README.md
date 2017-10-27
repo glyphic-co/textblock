@@ -4,7 +4,7 @@ Textblock provides continuous responsive typesetting beyond standard CSS breakpo
 
 It uses minimum and maximum values for font size, leading (line height), and measure (the container width).
 
-The script calculates floating point values based on em sizes defined within the document head:
+The script calculates floating point values based on units defined within the document head (or foot):
 
 - Minimum/maximum font size
 - Minimum/maximum font leading (line height)
