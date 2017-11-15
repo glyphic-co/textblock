@@ -29,7 +29,7 @@ var Textblock = function(textblocks) {
       var tb_maxf = block.maxFontSize;
       var tb_minl = block.minLineHeight;
       var tb_maxl = block.maxLineHeight;
-      var msr_width = elWidth(el.parentNode);
+      var msr_width = elWidth(el); // was elWidth(el.parentNode);
       var minld   = tb_minw / tb_minl;
       var maxld   = tb_maxw / tb_maxl;
 
@@ -40,8 +40,8 @@ var Textblock = function(textblocks) {
       var calcleading  = msr_width / leadingvariation;
 
       return {
-        fontSize: calctypesize,
-        lineHeight: calcleading
+        fontSize: Math.min(Math.max(calctypesize, tb_minf), tb_maxf),
+        lineHeight: Math.max(Math.min(calcleading, tb_minl), tb_maxl)
       }
     }
   }
