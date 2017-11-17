@@ -29,7 +29,16 @@ var Textblock = function(textblocks) {
       var tb_maxf = block.maxFontSize;
       var tb_minl = block.minLineHeight;
       var tb_maxl = block.maxLineHeight;
-      var msr_width = elWidth(el); // was elWidth(el.parentNode);
+      var tb_cont = block.container;
+
+      switch(tb_cont) {
+        case 'self':
+          var msr_width = elWidth(el);
+          break;
+        default:
+          var msr_width = elWidth(el.parentNode);
+      }
+
       var minld   = tb_minw / tb_minl;
       var maxld   = tb_maxw / tb_maxl;
 
@@ -49,10 +58,11 @@ var Textblock = function(textblocks) {
     var defaultSettings = {
       minWidth: 280,
       maxWidth: 800,
-      minFontSize: 1.9,
-      maxFontSize: 2.6,
+      minFontSize: 1.8,
+      maxFontSize: 2.4,
       minLineHeight: 1.33,
       maxLineHeight: 1.25,
+      container: 'parent',
       units: 'em'
     }
     return  Object.assign(defaultSettings, block);
