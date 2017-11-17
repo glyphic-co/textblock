@@ -1,0 +1,39 @@
+body {
+  margin: 2em 3vw;
+  font-size: 10px;
+  font-family: 'Source Sans Pro', sans-serif;
+}
+#content {
+  max-width: 700px;
+  margin: 0 auto;
+}
+h1 {
+  margin-bottom: 0;
+  font-weight: 900;
+}
+.subtitle {
+  margin-top: 0;
+}
+h2 {
+  margin: 1.5em 0 1.5em 0;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  font-weight: 400;
+}
+ul {
+  padding-left: 1.66em;
+}
+.code {
+  background-color: #f1f1f1;
+  border-radius: .16em;
+  padding: .66em;
+}
+.inline-code {
+  background-color: #f1f1f1;
+  border-radius: .16em;
+  padding: 0 .25em;
+  font-size: .8em;
+}
+.code, .inline-code {
+  font-family: 'Source Code Pro', monospace;
+}
