@@ -4,17 +4,19 @@
   <meta name="viewport" content="initial-scale=1.0">
 
   <title>textblock.js</title>
-  <link href="https://fonts.googleapis.com/css?family=Source+Code+Pro|Source+Sans+Pro:400,700" rel="stylesheet">
-  <link rel="stylesheet" href="textblock.css">
+  <script src="https://code.jquery.com/jquery-3.1.1.min.js" integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8=" crossorigin="anonymous"></script>
+  <link href="https://fonts.googleapis.com/css?family=Oswald:700|Source+Code+Pro|Source+Sans+Pro:400,700,900" rel="stylesheet">
+  <link rel="stylesheet" href="demo-assets/textblock.css">
 
-  <script src="src/textblock.js"></script>
+  <script src="build/textblock.min.js"></script>
+  <script src="demo-assets/substrate.js" charset="utf-8"></script>
 
   <!-- Edit this JSON code to scale text elements. -->
 
   <script>
     Textblock([
       {
-        target:'h1, h2, h3, p, ul li',
+        target:'h2, h3, p, ul li',
         minFontSize: 1.5,
         maxFontSize: 2.2,
         minLineHeight: 1.4,
@@ -41,27 +43,25 @@
 </head>
 <body>
 
+<h1><span>TEXT</span><span>BLOCK</span><span>.js</span></h1>
+
   <div id="content">
 
-      <h1>textblock.js</h1>
+      <p class="subtitle"><em>Continuously Responsive Web Type</em></p>
 
-      <p class="subtitle"><em>Responsive Web Type</em></p>
+      <p>Those of us who worked through the 90s know that what the web lacked in options gave us license to make some pretty awful websites. With all of the technical advances, today it would seem we have all that’s needed to design perfect pages. But we also find that only using what the standards provide leads to some compromises. Why is it that in this age of computerized design and production our web typography lacks perfection?</p>
 
-      <p>Those of us who worked through the 90s know that what the web lacked in options gave us license to make some pretty awful websites. Bad typesetting was the norm because we literally had only a handful of system fonts to work with. The entire web was either Helvetica, Lucida, or Georgia. And mailbox dog.</p>
+      <p>CSS Breakpoints are good for some things but setting type isn’t one of them. Using them to set responsive type is like driving a car with square wheels. It might get you there but the ride will be bumpy. Breakpoints have a <em>thunking</em> effect across widths. Of course the more breakpoints you add, the better the ride, but it also makes the code more complex. It’s a compromise.</p>
 
-      <p>Today it would seem we have all of what’s needed to set perfect type, but following the standards still leads to a compromise. Why is it that in this age of computerized design and production our web typography lacks so much?</p>
+      <p>When our shop decided to switch to code earlier in the design process, we tried ditching the standards for a minute. The idea was to make fully responsive layouts with perfectly set type that was true to the design. No compromises. The result was indeed a perfect line across widths. We did it through applying inline CSS with JS.</p>
 
-      <p>CSS Breakpoints are good for some things but setting type isn’t one of them. Using breakpoints to set responsive type is like driving a car with square wheels. It might get you there but the ride will be bumpy. They have a <em>thunking</em> effect across widths. Of course the more breakpoints you add, the better the ride, but it also makes the code more complex. It’s a compromise either way.</p>
-
-      <p>When my shop decided to switch to code earlier in the design process, we tried ditching the standards for a minute. The idea was to make fully responsive layouts with perfectly set type that was true to the design. No compromises.</p>
-
-      <p>The result was perfect and we did it by applying inline CSS with JS. The intention was to replace that code with the standard, compliant CSS but we never did. That “prototype” stage is now what we take live. In most cases the code is lighter than a “fully compliant” CSS implementation with all the breakpoints and such. But it’s not all rule breaking because this code can sit on top of a page’s CSS.</p>
+      <p>The intention was to replace that code with the standard, compliant CSS but we never did. That “prototype” stage is now what we take live. In most cases the code is actually lighter than a “fully compliant” CSS implementation with all the breakpoints and such. But it’s not all rule breaking because this code sits on top of a page’s normal CSS. It’s a progressive enhancement.</p>
 
       <p>We call it textblock.js. This page is set with it. Resize the browser to see it work.</p>
 
       <h2>How it works</h2>
 
-      <p>Textblock provides continuous responsive typesetting beyond standard CSS breakpoints. It adjusts type size and line height to set perfect type across varying screen widths. The script works on top of your current CSS, meaning you may already have a fallback.</p>
+      <p>Textblock provides continuous responsive typesetting beyond standard CSS breakpoints. It adjusts type size and line height to set perfect type across varying screen widths. The script works on top of your current CSS as a progressive enhancement.</p>
 
       <p>It uses minimum and maximum values for font size, leading (line height), and measure (the container width).</p>
 
@@ -73,7 +73,7 @@
         <li>Minimum/maximum container width</li>
       </ul>
 
-      <p>For easy math set the root em to 10px so em units are base 10, i.e. 2.4em = 24px.</p>
+      <p>For easy math set the root em to 10px so em units are base 10, i.e. 2.4em = 24px. But any number will do because once you start adjusting the min/max numbers the experience is more visual than punching numbers into a calculator. And for the gridnicks among us, textblock gives you absolute control over your modular scale, in floating points.</p>
 
       <h3>To initialize</h3>
 
@@ -97,7 +97,7 @@
         <li><span class="inline-code">units</span>: default <span class="inline-code">"em"</span></li>
       </ul>
 
-      <p>Example with extra parameters included</p>
+      <h3>Example with extra parameters included</h3>
 
       <div class="code">
         Textblock([{<br>
