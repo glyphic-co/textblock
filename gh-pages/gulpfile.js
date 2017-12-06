@@ -1,7 +1,3 @@
-// TODO: remove un-needed js files
-// TODO: replace textblock file with new version
-// TODO: setup for gulp to process on file changes
-
 var gulp = require('gulp');
 var browserSync = require('browser-sync').create();
 var concat = require('gulp-concat');
