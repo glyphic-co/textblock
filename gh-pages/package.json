@@ -1,0 +1,20 @@
+{
+  "name": "textblock.js",
+  "version": "0.9.0",
+  "license": "MIT",
+  "README": "README.md",
+  "devDependencies": {
+    "autoprefixer": "^7.2.1",
+    "browser-sync": "^2.18.13",
+    "cssnano": "^3.10.0",
+    "gulp": "^3.9.1",
+    "gulp-concat": "^2.6.1",
+    "gulp-htmlmin": "^3.0.0",
+    "gulp-postcss": "^7.0.0",
+    "gulp-rename": "^1.2.2",
+    "gulp-uglify": "^3.0.0",
+    "gulp-uncss": "^1.0.6",
+    "postcss-import": "^11.0.0"
+  },
+  "dependencies": {}
+}
