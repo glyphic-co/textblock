@@ -1,5 +1,6 @@
 # todo
 
+- mobile screen keeps editor window bleeding off to the right
 - replace textblock file with new version
 - copy src images to output on change
 - use npm? Any more services to use?
