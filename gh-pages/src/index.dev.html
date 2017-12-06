@@ -51,7 +51,7 @@
   <script>
   /*! typedeskref.com 2016-03-07 */
   function substrate(){var a=$(window).width(),b=$(".textblock").width();if(b>800&&$(".textblock").css("max-width","800px"),a>1200)var c="20vw";else var c=a/33/2+"vw";$(".tbcon").css({margin:"0 "+c}),$(".textblock").css({margin:"0 auto"}),$("#vpw").text(a)}function measure(){$(textblock.textblocks).each(function(a){var b=textblock.textblocks[a].id,c=textblock.textblocks[a].minwdth,d=textblock.textblocks[a].maxwdth,e=textblock.textblocks[a].minfs,f=textblock.textblocks[a].maxfs,g=textblock.textblocks[a].minld,h=textblock.textblocks[a].maxld,i=$(window).width(),j=$(b).parent().width(),k=c/g,l=d/h,m=e+(f-e)/(d-c)*(j-c),n=m,o=k+(l-k)/(d-c)*(j-c),p=j/o;$(b).css("font-size",n+"em"),$(b).css("line-height",p);parseInt($(b).css("font-size"));624>i?($(".txt2").removeClass("smpltxt2"),$(".2h3").removeClass("smpl2h3"),$(".ft").removeClass("grid__row")):i>624&&($(".txt2").addClass("smpltxt2"),$(".2h3").addClass("smpl2h3"),$(".ft").addClass("grid__row"))})}$(document).ready(function(a){substrate()}),$(window).resize(function(){substrate()}),$(document).ready(function(a){measure()}),$(window).resize(function(){measure()});
-  var textblock={textblocks:[{  id:".tdr",  minwdth:280,  maxwdth:525,  minfs:6.15,  maxfs:7.5,  minld:1.3,  maxld:1.3},{  id:".title",  minwdth:280,  maxwdth:525,  minfs:1.63,  maxfs:3,  minld:1.25,  maxld:1.25},{  id:".emph",  minwdth:280,  maxwdth:525,  minfs:1.77,  maxfs:2.4,minld:1.29,maxld:1.25},{id:".subtitle",minwdth:280,maxwdth:525,minfs:1.43,maxfs:2.5,minld:1.33,maxld:1.25},{id:".button",minwdth:280,maxwdth:525,minfs:1.6,maxfs:2.4,minld:1,maxld:1},{id:".npmlink",minwdth:280,maxwdth:550,minfs:1.81,maxfs:2.0,minld:1.3,maxld:1.3},{id:".ttext",minwdth:1875,maxwdth:2288,minfs:1.8,maxfs:2.1,minld:1.33,maxld:1.25},{id:".nmdrp",minwdth:188,maxwdth:233,minfs:.65,maxfs:.7,minld:1.2,maxld:1.2},{id:".intro p",minwdth:280,maxwdth:800,minfs:1.9,maxfs:2.6,minld:1.33,maxld:1.25},{id:"h3.smplh3, .order h3, .signup h3",minwdth:280,maxwdth:600,minfs:1.85,maxfs:2.6,minld:1.33,maxld:1.25},{id:"h3.smpl2h3",minwdth:280,maxwdth:450,minfs:1.85,maxfs:2.6,minld:1.33,maxld:1.25},{id:".smpltxt",minwdth:320,maxwdth:600,minfs:1.64,maxfs:2.2,minld:1.33,maxld:1.25},{id:".InputAddOn-field",minwdth:320,maxwdth:539,minfs:1.42,maxfs:1.8,minld:1,maxld:1},{id:".chimpbutton",minwdth:320,maxwdth:539,minfs:1.42,maxfs:1.8,minld:1,maxld:1},{id:".smpltxt2",minwdth:172,maxwdth:450,minfs:1.64,maxfs:2.2,minld:1.33,maxld:1.25},{id:".colophon,.webcolophon",minwdth:125,maxwdth:1170,minfs:0.79,maxfs:1.1,minld:1.5,maxld:1.4}]};
+  var textblock={textblocks:[{  id:".txtblck",  minwdth:280,  maxwdth:525,  minfs:6.15,  maxfs:7.5,  minld:1.3,  maxld:1.3},{  id:".title",  minwdth:280,  maxwdth:525,  minfs:1.63,  maxfs:3,  minld:1.25,  maxld:1.25},{  id:".emph",  minwdth:280,  maxwdth:525,  minfs:1.77,  maxfs:2.4,minld:1.29,maxld:1.25},{id:".subtitle",minwdth:280,maxwdth:525,minfs:1.43,maxfs:2.5,minld:1.33,maxld:1.25},{id:".button",minwdth:280,maxwdth:525,minfs:1.6,maxfs:2.4,minld:1,maxld:1},{id:".npmlink",minwdth:280,maxwdth:550,minfs:1.81,maxfs:2.0,minld:1.3,maxld:1.3},{id:".ttext",minwdth:1875,maxwdth:2288,minfs:1.8,maxfs:2.1,minld:1.33,maxld:1.25},{id:".nmdrp",minwdth:188,maxwdth:233,minfs:.65,maxfs:.7,minld:1.2,maxld:1.2},{id:".intro p",minwdth:280,maxwdth:800,minfs:1.9,maxfs:2.6,minld:1.33,maxld:1.25},{id:"h3.smplh3, .order h3, .signup h3",minwdth:280,maxwdth:600,minfs:1.85,maxfs:2.6,minld:1.33,maxld:1.25},{id:"h3.smpl2h3",minwdth:280,maxwdth:450,minfs:1.85,maxfs:2.6,minld:1.33,maxld:1.25},{id:".smpltxt",minwdth:320,maxwdth:600,minfs:1.64,maxfs:2.2,minld:1.33,maxld:1.25},{id:".InputAddOn-field",minwdth:320,maxwdth:539,minfs:1.42,maxfs:1.8,minld:1,maxld:1},{id:".chimpbutton",minwdth:320,maxwdth:539,minfs:1.42,maxfs:1.8,minld:1,maxld:1},{id:".smpltxt2",minwdth:172,maxwdth:450,minfs:1.64,maxfs:2.2,minld:1.33,maxld:1.25},{id:".colophon,.webcolophon",minwdth:125,maxwdth:1170,minfs:0.79,maxfs:1.1,minld:1.5,maxld:1.4}]};
   </script>
   <!-- start Mixpanel -->
   <!-- todo — entire section -->
@@ -177,7 +177,7 @@
     .bookmargin {
       display: none;
     }
-    .tdr {
+    .txtblck {
       display: none;
     }
     h2.title {
@@ -277,7 +277,7 @@
     <div class="grid__row grid__row--2 flagbox">
       <div class="grid__item flagmrgn"></div>
       <div class="grid__item--7 flag">
-        <h1 class="tdr" itemprop="name">Textblock.js<img src="i/textblock-icon.svg" width="30" height="30" class="textblock-icon"></h1>
+        <h1 class="txtblck" itemprop="name">Textblock.js<img src="i/textblock-icon.svg" width="30" height="30" class="textblock-icon"></h1>
         <h2 class="title" itemprop="name">Continuously Responsive Typesetting</span></h2>
         <p class="emph" itemprop="description">Textblock sets responsive type beyond standard CSS breakpoints. It adjusts size and leading to cast perfectly scaled type across varying screen widths. It works on top of your current CSS as a progressive enhancement.</p>
         <div class="button"><a href="#" id="githubone">Download from Github</div>

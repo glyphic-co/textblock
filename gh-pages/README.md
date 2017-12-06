@@ -1,7 +1,5 @@
 # todo
 
-- remove extra css
-- change references of tdr to textblock
 - setup Mixpanel
 - remove un-needed js files
 - replace textblock file with new version
