@@ -1,26 +1,11 @@
 mixpanel.track("Page Loaded");
-mixpanel.track_links("#githubone", "Left for Oak Knoll", {"Page Location": "Top"});
-mixpanel.track_links("#amazonone", "Left for Amazon", {"Page Location": "Top"});
-mixpanel.track_links("#frwrdlnk", "Opened Foreword");
-mixpanel.track_links("#intrdctnlnk", "Opened Introduction");
-mixpanel.track_links("#terms_1", "Opened Terms 1");
-mixpanel.track_links("#terms_2", "Opened Terms 2");
-mixpanel.track_links("#terms_3", "Opened Terms 3");
-mixpanel.track_links("#anatomy_1", "Opened Anatomy 1");
-mixpanel.track_links("#anatomy_2", "Opened Anatomy 2");
-mixpanel.track_links("#anatomy_3", "Opened Anatomy 3");
-mixpanel.track_links("#specimens_1", "Opened Specimens 1");
-mixpanel.track_links("#specimens_2", "Opened Specimens 2");
-mixpanel.track_links("#specimens_3", "Opened Specimens 3");
-mixpanel.track_links("#glyphs_1", "Opened Glyphs 1");
-mixpanel.track_links("#glyphs_2", "Opened Glyphs 2");
-mixpanel.track_links("#glyphs_3", "Opened Glyphs 3");
-mixpanel.track_links("#organization_1", "Opened Organization 1");
-mixpanel.track_links("#organization_2", "Opened Organization 2");
-mixpanel.track_links("#organization_3", "Opened Organization 3");
-mixpanel.track_forms("#mc-embedded-subscribe-form", "Subscribed to Updates");
-mixpanel.track_links("#oakknolltwo", "Left for Oak Knoll", {"Page Location": "Bottom"});
-mixpanel.track_links("#amazontwo", "Left for Amazon", {"Page Location": "Bottom"});
+mixpanel.track_links("#githubone", "Left for Github", {"Page Location": "Top"});
+mixpanel.track_links("#npmone", "Left for NPM", {"Page Location": "Top"});
+
+mixpanel.track_links("#githubtwo", "Left for Github", {"Page Location": "Bottom"});
+mixpanel.track_links("#npmtwo", "Left for NPM", {"Page Location": "Bottom"});
+mixpanel.track_forms("#mclist", "Subscribed to Updates");
+
 mixpanel.track_links("#anatomyone", "To Anatomy Poster via Link", {"Page Location": "Bottom"});
 mixpanel.track_links("#anatomytwo", "To Anatomy Poster via Image", {"Page Location": "Bottom"});
 mixpanel.track_links("#glyphic", "Left for Glyphic");
