@@ -232,7 +232,7 @@ p.npmlink a {
   margin: 2.5vw 5vw 0 5vw;
 }
 .npmlink.ord {
-  margin: 1em 5vw 7vw 5.1vw;
+  margin: .5em 5vw 7vw 5.1vw;
 }
 .chimpform {
   margin: 3em 5vw 7vw 5vw;
@@ -336,6 +336,13 @@ h1 img, .textblock-icon {
   height: 30px !important;
   width: 30px !important;
   margin: 0 0 -2px 2px;
+}
+.github-icon {
+  display: inline-block;
+  background: url('../i/github-icon.svg') no-repeat center left;
+  background-size: contain;
+  padding-left: 1.80em;
+  color: #FFF;
 }
 H2 {
   font: normal 3em/1.3 "Knockout 51 A", "Knockout 51 B";
@@ -849,7 +856,7 @@ span.clsbk {
     margin: 3vw 6vw 0 6vw;
   }
   .npmlink.ord {
-    margin: 1em 6vw 7vw 6.1vw;
+    margin: .5em 6vw 7vw 6.1vw;
   }
   .chimpform {
     margin: 3em 6vw 7vw 6vw;
@@ -1027,7 +1034,7 @@ H3 {
   margin: 42px 84px 0 84px;
 }
 .npmlink.ord {
-  margin: 1em 84px 7vw 86px;
+  margin: .5em 84px 7vw 86px;
 }
 .chimpform {
   margin: 3em 84px 7vw 84px;

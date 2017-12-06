@@ -1,7 +1,7 @@
 # todo
 
 - replace textblock file with new version
-- icon for Github button
+- copy src images to output on change
 - use npm? Any more services to use?
 - plan for numbered instructions in page band
 - plan for code blocks in left/right area
