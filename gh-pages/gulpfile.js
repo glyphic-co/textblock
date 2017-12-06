@@ -4,7 +4,6 @@ var concat = require('gulp-concat');
 var rename = require('gulp-rename');
 var uglify = require('gulp-uglify');
 var htmlmin = require('gulp-htmlmin');
-//
 var postcss = require('gulp-postcss');
 var atImport = require('postcss-import');
 var autoprefixer = require('autoprefixer');
@@ -22,7 +21,7 @@ var dest = './'
 // Uglify JS
 gulp.task('uglify-JsFiles', function() {
     return gulp.src(['./src/js/type-kern-only.js','./src/js/mp.js'])
-        .pipe(concat('tdrkern.min.js'))
+        .pipe(concat('mpkern.min.js'))
         .pipe(uglify())
         .pipe(gulp.dest(jsDest));
 });
