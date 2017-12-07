@@ -6,7 +6,7 @@ body {
   min-width: 320px;
 }
 .grid {
-  max-width: 1200px;
+  max-width: 1024px;
   margin: 3vw auto 0 auto;
   min-width: 320px;
 }
@@ -23,9 +23,6 @@ body {
       -ms-flex: 1;
           flex: 1;
 }
-/*.booktop {
-  display: none;
-}*/
 .grid__row--2 {
   -webkit-flex-direction: row;
       -ms-flex-direction: row;
@@ -34,7 +31,7 @@ body {
 /*.flagbox{
   margin-bottom: 4.8em;
   width: 100vw;
-  max-width: 1200px;
+  max-width: 1024px;
   overflow: hidden;
   min-width: 375px;
 }*/
@@ -104,34 +101,14 @@ p.npmlink a {
       -ms-flex: 6;
           flex: 6;
 }
-/*.book {
-  background: url('../i/tdr-book.png');
-  background-repeat: no-repeat;
-  background-size: 100%;
-  margin: 2em 0 2em 0;
-  z-index: 1;
-}*/
 
-/*body {
-  font-size: 10px;
-  background-color: rgba(245, 244, 242, 1);
-  color: #323232;
-  overflow: hidden;
-  min-width: 375px;
-}*/
-
-/*.grid {
-  max-width: 1200px;
-  margin: 3vw auto 0 auto;
-  min-width: 375px;
-}*/
 .grid100 {
   margin: 0 0 6.4em 0;
 }
 /*.flagbox{
   margin-bottom: 4.8em;
   width: 100vw;
-  max-width: 1200px;
+  max-width: 1024px;
   overflow: hidden;
   min-width: 375px;
 }*/
@@ -153,7 +130,7 @@ p.npmlink a {
 /*.bellyrow::-webkit-scrollbar { width: 0 !important }*/
 .bellyband .grid__item {
   /*text-align: center;*/
-  padding: 30px 0 0 0;
+  padding: 20px;
   z-index: 2000;
 }
 /*.grid__row {
@@ -447,14 +424,6 @@ a:link, a:visited, a:hover, a:active {
   color: rgb(7, 210, 4);
 }
 
-/*.book {
-  background: url('../i/tdr-book.png');
-  background-repeat: no-repeat;
-  background-size: 100%;
-  margin: 2em 0 2em 0;
-  z-index: 1;
-}*/
-
 .feat {
   background-color: #FFF;
   z-index: 1000;
@@ -524,48 +493,6 @@ a:link, a:visited, a:hover, a:active {
   text-decoration: underline;
 }
 
-.avtr {
-  -webkit-flex-grow: 0;
-      -ms-flex-positive: 0;
-          flex-grow: 0;
-  -ms-flex-negative: 0;
-          -webkit-flex-shrink: 0;
-          flex-shrink: 0;
-  -ms-flex-preferred-size: 100px;
-          -webkit-flex-basis: 100px;
-          flex-basis: 100px;
-  height: 100px !important;
-  width: 100px !important;
-  border-radius: 50px;
-  background-repeat: no-repeat;
-  background-size: 100px 100px;
-  background-position: center center;
-  margin-left: 28px;
-  /*border: solid 1px #e7e7e7;*/
-  -webkit-flex-grow: 0;
-      -ms-flex-positive: 0;
-          flex-grow: 0;
-  -ms-flex-negative: 0;
-          -webkit-flex-shrink: 0;
-          flex-shrink: 0;
-}
-.ttext {
-  margin-left: 20px;
-  /*border: solid 1px #e7e7e7;*/
-  font: italic 21px/23px "adobe-caslon-pro";
-  font-weight: 400;
-}
-
-.ttext p {
-  margin:0.6em 0 0 0;
-  padding:0;
-  font-family: "Knockout 52 A", "Knockout 52 B";
-  letter-spacing: 1.5px;
-  font-size: 15px;
-  font-weight: normal;
-  text-transform: uppercase;
-}
-
 
 /* CSS CLOSE X */
 .close {
@@ -609,9 +536,6 @@ a:link, a:visited, a:hover, a:active {
   height: 4px;
   margin-top: -2px;
 }
-/*.booktop {
-  display: none;
-}*/
 
 span.clsbk {
   visibility: visible;
@@ -791,13 +715,6 @@ span.clsbk {
 
 
 @media all and (max-width: 623px) {
-  /*.book {
-    overflow: hidden;
-    width: auto;
-  }
-  .flag {
-    margin-bottom: 3em;
-  }*/
   .intro {
     padding:0 0 1vw 0;
   }
@@ -917,31 +834,6 @@ span.clsbk {
   }
 }
 
-/*@media all and (max-width: 414px) {
-  .bellyrow{
-    height: 132px;
-  }
-  .avtr {
-    -ms-flex-preferred-size: 90px;
-            -webkit-flex-basis: 90px;
-            flex-basis: 90px;
-    height: 90px !important;
-    width: 90px !important;
-    border-radius: 45px;
-    background-size: 90px 90px;
-    margin-left: 20px;
-  }
-  .ttext {
-    margin-left: 20px;
-  }
-  .tbcon {
-    margin-bottom: 2.8em !important;
-  }
-  .share {
-    margin-top: 1em;
-  }
-}*/
-
 @media all and (max-width: 375px) {
   .grid {
     /*margin: 3vw auto 0 auto;*/
@@ -949,26 +841,8 @@ span.clsbk {
   .grid100 {
     margin: 0 0 5.8em 0;
   }
-  /*.book {
-    -webkit-transform: rotate(5deg);
-            transform: rotate(5deg);
-    margin: 2em 0 2em -0.5em;
-  }*/
   .bellyrow{
     height: 124px;
-  }
-  .avtr {
-    -ms-flex-preferred-size: 82px;
-            -webkit-flex-basis: 82px;
-            flex-basis: 82px;
-    height: 82px !important;
-    width: 82px !important;
-    border-radius: 41px;
-    background-size: 82px 82px;
-    margin-left: 23px;
-  }
-  .ttext {
-    margin-left: 18px;
   }
   .tbcon {
     margin-bottom: 2.8em !important;
@@ -978,12 +852,12 @@ span.clsbk {
   }
 }
 
-@media all and (min-width: 1200px) {
+@media all and (min-width: 1024px) {
 .grid {
   margin: 3.6em auto 0 auto;
 }
 .button {
-  margin-top: 1.5em !important;
+  /*margin-top: 1em !important;*/
 }
 H3 {
   padding-top: 84px;
