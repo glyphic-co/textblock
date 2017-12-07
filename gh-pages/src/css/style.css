@@ -328,7 +328,7 @@ H1 {
   font: normal 6em/1.38 "adobe-caslon-pro";
   font-weight: 700;
   font-style: italic;
-  margin: 0.33em 0 0 0;
+  margin: 0.66em 0 0 0;
   color: #323232;
   height: 1.66em;
 }
@@ -337,11 +337,17 @@ h1 img, .textblock-icon {
   width: 30px !important;
   margin: 0 0 -2px 2px;
 }
-.github-icon {
+.txtblck {
   display: inline-block;
+  background: url('../i/textblock-icon.svg') no-repeat top right;
+  background-size: contain;
+  padding-right: .88em;
+  background-size: 25% 25%;
+}
+.github-icon {
   background: url('../i/github-icon.svg') no-repeat center left;
   background-size: contain;
-  padding-left: 1.80em;
+  padding-left: 1.9em;
   color: rgba(0, 0, 0, 0.66);
 }
 H2 {
@@ -782,28 +788,7 @@ span.clsbk {
 
 
 
-@media all and (min-width: 10px) {
-  /*.grid__row--2 {
-    -webkit-flex-direction: row;
-        -ms-flex-direction: row;
-            flex-direction: row;
-  }*/
-}
 
-/*@media all and (max-width: 899px) {
-  .book {
-    min-width: 285px;
-    -ms-flex-item-align: end;
-            -webkit-align-self: flex-end;
-            align-self: flex-end;
-  }
-  .flag {
-    min-width: 280px;
-  }
-  .flagmrgn {
-    min-width: 2em;
-  }
-}*/
 
 @media all and (max-width: 623px) {
   /*.book {
@@ -932,14 +917,7 @@ span.clsbk {
   }
 }
 
-@media all and (max-width: 414px) {
-/*2286*/
-  .grid {
-    /*margin: 2.5em auto 0 auto;*/
-  }
-  /*.flagbox{
-    margin-bottom: 4em;
-  }*/
+/*@media all and (max-width: 414px) {
   .bellyrow{
     height: 132px;
   }
@@ -962,26 +940,7 @@ span.clsbk {
   .share {
     margin-top: 1em;
   }
-  /*.book {
-    display: none;
-  }*/
-  /*h2.title {
-    display: none;
-  }*/
-  /*.bookmargin {
-    display: none;
-  }
-  .txtblck {
-    display: none;
-  }
-  .title {
-    color: #000;
-  }
-  .booktop {
-    display: block;
-    margin: 7vw 9vw 9vw 9vw;
-  }*/
-}
+}*/
 
 @media all and (max-width: 375px) {
   .grid {
@@ -1022,6 +981,9 @@ span.clsbk {
 @media all and (min-width: 1200px) {
 .grid {
   margin: 3.6em auto 0 auto;
+}
+.button {
+  margin-top: 1.5em !important;
 }
 H3 {
   padding-top: 84px;
