@@ -1,21 +1,130 @@
-<html><head prefix="og: http://ogp.me/ns# fb: http://ogp.me/ns/fb#"><meta charset="UTF-8"><meta name="viewport" content="initial-scale=1"><meta name="twitter:card" content="summary_large_image"><meta name="twitter:site" content="@theorosendorf"><meta name="twitter:creator" content="@theorosendorf"><meta name="twitter:title" content="textblock.js"><meta name="twitter:description" content="Responsive Typesetting"><title>textblock.js</title><link rel="shortcut icon" href="favicon.ico"><link rel="stylesheet" href="c/textblock.min.css"><link rel="stylesheet" type="text/css" href="https://cloud.typography.com/6889374/806608/css/fonts.css"><script async src="https://use.typekit.net/apl7hcn.js"></script><script>try{Typekit.load({ async: true });}catch(e){}</script><script src="http://code.jquery.com/jquery-latest.min.js"></script><script>/*! typedeskref.com 2016-03-07 */
-  function substrate(){var a=$(window).width(),b=$(".textblock").width();if(b>768&&$(".textblock").css("max-width","768px"),a>1024)var c="20vw";else var c=a/33/2+"vw";$(".tbcon").css({margin:"0 "+c}),$(".textblock").css({margin:"0 auto"}),$("#vpw").text(a)}function measure(){$(textblock.textblocks).each(function(a){var b=textblock.textblocks[a].id,c=textblock.textblocks[a].minwdth,d=textblock.textblocks[a].maxwdth,e=textblock.textblocks[a].minfs,f=textblock.textblocks[a].maxfs,g=textblock.textblocks[a].minld,h=textblock.textblocks[a].maxld,i=$(window).width(),j=$(b).parent().width(),k=c/g,l=d/h,m=e+(f-e)/(d-c)*(j-c),n=m,o=k+(l-k)/(d-c)*(j-c),p=j/o;$(b).css("font-size",n+"em"),$(b).css("line-height",p);parseInt($(b).css("font-size"));624>i?($(".txt2").removeClass("smpltxt2"),$(".2h3").removeClass("smpl2h3"),$(".ft").removeClass("grid__row")):i>624&&($(".txt2").addClass("smpltxt2"),$(".2h3").addClass("smpl2h3"),$(".ft").addClass("grid__row"))})}$(document).ready(function(a){substrate()}),$(window).resize(function(){substrate()}),$(document).ready(function(a){measure()}),$(window).resize(function(){measure()});
-  var textblock={textblocks:[{
-    id:".txtblck",  minwdth:194,  maxwdth:525,  minfs:3.8,  maxfs:7.5,  minld:1.3,  maxld:1.3},{
-    id:".title",  minwdth:194,  maxwdth:525,  minfs:1.66,  maxfs:3,  minld:1.125,  maxld:1.125},{
-    id:".emph",  minwdth:194,  maxwdth:525,  minfs:1.8,  maxfs:2.4,minld:1.27,maxld:1.25},{
-    id:".button",minwdth:194,maxwdth:525,minfs:1.4,maxfs:2.2,minld:1,maxld:1},{
-    id:".steptext",minwdth:194,maxwdth:326,minfs:1.3,maxfs:1.8,minld:1.2,maxld:1.2},{
-    id:"#npmone,#npmtwo",minwdth:194,maxwdth:550,minfs:0.6,maxfs:1.0,minld:1.3,maxld:1.3},{
-    id:".nmdrp",minwdth:188,maxwdth:233,minfs:.65,maxfs:.7,minld:1.2,maxld:1.2},{
-    id:".intro p, .intro ul li, .intro h2",minwdth:280,maxwdth:800,minfs:1.9,maxfs:2.6,minld:1.33,maxld:1.25},{
-    id:"h3.smplh3, .order h3, .signup h3",minwdth:280,maxwdth:600,minfs:1.85,maxfs:2.6,minld:1.33,maxld:1.25},{
-    id:"h3.smpl2h3",minwdth:280,maxwdth:450,minfs:1.85,maxfs:2.6,minld:1.33,maxld:1.25},{
-    id:".smpltxt",minwdth:320,maxwdth:600,minfs:1.64,maxfs:2.2,minld:1.33,maxld:1.25},{
-    id:".InputAddOn-field",minwdth:320,maxwdth:539,minfs:1.42,maxfs:1.8,minld:1,maxld:1},{
-    id:".chimpbutton",minwdth:320,maxwdth:539,minfs:1.42,maxfs:1.8,minld:1,maxld:1},{
-    id:".smpltxt2",minwdth:172,maxwdth:450,minfs:1.64,maxfs:2.2,minld:1.33,maxld:1.25},{
-    id:".colophon,.webcolophon",minwdth:125,maxwdth:1170,minfs:0.79,maxfs:1.1,minld:1.5,maxld:1.4}]};</script><style>h1 {
+<html><head prefix="og: http://ogp.me/ns# fb: http://ogp.me/ns/fb#"><meta charset="UTF-8"><meta name="viewport" content="initial-scale=1"><meta name="twitter:card" content="summary_large_image"><meta name="twitter:site" content="@theorosendorf"><meta name="twitter:creator" content="@theorosendorf"><meta name="twitter:title" content="textblock.js"><meta name="twitter:description" content="Responsive Typesetting"><title>textblock.js</title><link rel="shortcut icon" href="favicon.ico"><link rel="stylesheet" href="c/textblock.min.css"><link rel="stylesheet" type="text/css" href="https://cloud.typography.com/6889374/806608/css/fonts.css"><script async src="https://use.typekit.net/apl7hcn.js"></script><script>try{Typekit.load({ async: true });}catch(e){}</script><script src="http://code.jquery.com/jquery-latest.min.js"></script><script>function substrate(){var a=$(window).width(),b=$(".textblock").width();if(b>768&&$(".textblock").css("max-width","768px"),a>1024)var c="20vw";else var c=a/33/2+"vw";$(".tbcon").css({margin:"0 "+c}),$(".textblock").css({margin:"0 auto"}),$("#vpw").text(a);}$(document).ready(function(a){substrate()}),$(window).resize(function(){substrate()}),$(document).ready(function(a){measure()}),$(window).resize(function(){measure()});
+
+  /*! textblock 2017-12-08 */
+  var Textblock=function(a){function b(){g(a,function(a){var b=d(a);g(h(b.target),function(a){var d=c(a,b);d&&(a.style.fontSize=d.fontSize+b.units,a.style.lineHeight=d.lineHeight)})})}function c(a,b){if(a){var c=b.minWidth,d=b.maxWidth,e=b.minFontSize,f=b.maxFontSize,g=b.minLineHeight,h=b.maxLineHeight,j=b.container;switch(j){case"self":var k=i(a);break;default:var k=i(a.parentNode)}var l=c/g,m=d/h,n=e+(f-e)/(d-c)*(k-c),o=n,p=l+(m-l)/(d-c)*(k-c),q=k/p;return{fontSize:Math.min(Math.max(o,e),f),lineHeight:Math.max(Math.min(q,g),h)}}}function d(a){var b={minWidth:280,maxWidth:800,minFontSize:1.8,maxFontSize:2.4,minLineHeight:1.33,maxLineHeight:1.25,container:"parent",units:"em"};return Object.assign(b,a)}function e(a){function b(){"complete"===document.readyState||"loading"!==document.readyState&&!document.documentElement.doScroll?a&&a():document.addEventListener("DOMContentLoaded",function(){a&&a()})}function c(){document.attachEvent("onreadystatechange",function(){"complete"===document.readyState&&(document.detachEvent("onreadystatechange",arguments.callee),a&&a())})}document.addEventListener?b():document.attachEvent&&c()}function f(a){window.attachEvent?window.attachEvent("onresize",function(){a&&a()}):window.addEventListener&&window.addEventListener("resize",function(){a&&a()},!0)}function g(a,b){for(var c=0;c<a.length;c++)b&&b(a[c],c)}function h(a){return document.querySelectorAll(a)}function i(a){var b=(a.offsetWidth,parseInt(j(a,"padding-left"))+parseInt(j(a,"padding-right"))),c=parseInt(j(a,"border-left-width"))+parseInt(j(a,"border-right-width"));return a.offsetWidth-b-c}function j(a,b){return window.getComputedStyle?window.getComputedStyle(a,null).getPropertyValue(b):a.currentStyle[b]}e(function(){b(),f(b)})};
+  Textblock([
+    {
+      target:".txtblck",
+      minWidth:194,
+      maxWidth:525,
+      minFontSize:3.8,
+      maxFontSize:7.5,
+      minLineHeight:1.3,
+      maxLineHeight:1.3
+      },{
+      target:".title",
+      minWidth:194,
+      maxWidth:525,
+      minFontSize:1.66,
+      maxFontSize:3,
+      minLineHeight:1.125,
+      maxLineHeight:1.125
+      },{
+      target:".emph",
+      minWidth:194,
+      maxWidth:525,
+      minFontSize:1.8,
+      maxFontSize:2.4,
+      minLineHeight:1.27,
+      maxLineHeight:1.25
+      },{
+      target:".button",
+      minWidth:194,
+      maxWidth:525,
+      minFontSize:1.4,
+      maxFontSize:2.2,
+      minLineHeight:1,
+      maxLineHeight:1
+      },{
+      target:".steptext",
+      minWidth:194,
+      maxWidth:326,
+      minFontSize:1.3,
+      maxFontSize:1.8,
+      minLineHeight:1.2,
+      maxLineHeight:1.2
+      },{
+      target:"#npmone,#npmtwo",
+      minWidth:194,
+      maxWidth:550,
+      minFontSize:0.6,
+      maxFontSize:1.0,
+      minLineHeight:1.3,
+      maxLineHeight:1.3
+      },{
+      target:".nmdrp",
+      minWidth:188,
+      maxWidth:233,
+      minFontSize:.65,
+      maxFontSize:.7,
+      minLineHeight:1.2,
+      maxLineHeight:1.2
+      },{
+      target:".intro p, .intro ul li, .intro h2",
+      minWidth:280,
+      maxWidth:800,
+      minFontSize:1.9,
+      maxFontSize:2.6,
+      minLineHeight:1.33,
+      maxLineHeight:1.25
+      },{
+      target:"h3.smplh3, .order h3, .signup h3",
+      minWidth:280,
+      maxWidth:600,
+      minFontSize:1.85,
+      maxFontSize:2.6,
+      minLineHeight:1.33,
+      maxLineHeight:1.25
+      },{
+      target:"h3.smpl2h3",
+      minWidth:280,
+      maxWidth:450,
+      minFontSize:1.85,
+      maxFontSize:2.6,
+      minLineHeight:1.33,
+      maxLineHeight:1.25
+      },{
+      target:".smpltxt",
+      minWidth:320,
+      maxWidth:600,
+      minFontSize:1.64,
+      maxFontSize:2.2,
+      minLineHeight:1.33,
+      maxLineHeight:1.25
+      },{
+      target:".InputAddOn-field",
+      minWidth:320,
+      maxWidth:539,
+      minFontSize:1.42,
+      maxFontSize:1.8,
+      minLineHeight:1,
+      maxLineHeight:1
+      },{
+      target:".chimpbutton",
+      minWidth:320,
+      maxWidth:539,
+      minFontSize:1.42,
+      maxFontSize:1.8,
+      minLineHeight:1,
+      maxLineHeight:1
+      },{
+      target:".smpltxt2",
+      minWidth:172,
+      maxWidth:450,
+      minFontSize:1.64,
+      maxFontSize:2.2,
+      minLineHeight:1.33,
+      maxLineHeight:1.25
+      },{
+      target:".colophon,.webcolophon",
+      minWidth:125,
+      maxWidth:1170,
+      minFontSize:0.79,
+      maxFontSize:1.1,
+      minLineHeight:1.5,
+      maxLineHeight:1.4
+    }
+  ]);</script><style>h1 {
     kerning-pairs: Te -0.06em;
   }
   .editor {

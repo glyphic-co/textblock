@@ -770,7 +770,7 @@ span.clsbk {
   display: flex;
   flex-direction: row;
   width:100%;
-  margin-bottom: 1em;
+  margin-bottom: 2em;
   max-width: 500px;
 }
 .step:last-child {
