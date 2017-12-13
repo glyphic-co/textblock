@@ -52,7 +52,7 @@
     id:".title",  minwdth:194,  maxwdth:525,  minfs:1.66,  maxfs:3,  minld:1.125,  maxld:1.125},{
     id:".emph",  minwdth:194,  maxwdth:525,  minfs:1.8,  maxfs:2.4,minld:1.27,maxld:1.25},{
     id:".button",minwdth:194,maxwdth:525,minfs:1.4,maxfs:2.2,minld:1,maxld:1},{
-    id:".steptext",minwdth:752,maxwdth:1200,minfs:1.6,maxfs:2.0,minld:1.2,maxld:1.2},{
+    id:".steptext",minwdth:194,maxwdth:326,minfs:1.3,maxfs:1.8,minld:1.2,maxld:1.2},{
     id:"#npmone,#npmtwo",minwdth:194,maxwdth:550,minfs:0.6,maxfs:1.0,minld:1.3,maxld:1.3},{
     id:".nmdrp",minwdth:188,maxwdth:233,minfs:.65,maxfs:.7,minld:1.2,maxld:1.2},{
     id:".intro p, .intro ul li, .intro h2",minwdth:280,maxwdth:800,minfs:1.9,maxfs:2.6,minld:1.33,maxld:1.25},{
@@ -125,9 +125,9 @@
 
   .numbersteps {
     display: flex;
-    max-width: 1024px;
+    max-width: 960px;
     margin:0 auto;
-    padding: 0 0.5em 0 3em;
+    padding: 0 0.5em 0 4em;
   }
 
   .stepnumber {
@@ -263,14 +263,20 @@
 
         <div class="grid__row--bband numbersteps">
 
-        <div class="grid__item--2 stepnumber"><span class="indices">1</span></div>
-        <div class="grid__item--6 steptext">Add textblock.js to the head or foot of your document</div>
+        <div class="step">
+          <div class="grid__item--2 stepnumber"><span class="indices">1</span></div>
+          <div class="grid__item--6 steptext">Add textblock.js to the head or foot of your document</div>
+        </div>
 
-        <div class="grid__item--2 stepnumber"><span class="indices">2</span></div>
-        <div class="grid__item--6 steptext">Target elements in a Textblock(&nbsp;) script using js notation</div>
+        <div class="step">
+          <div class="grid__item--2 stepnumber"><span class="indices">2</span></div>
+          <div class="grid__item--6 steptext">Target elements in a Textblock(&nbsp;) script using js notation</div>
+        </div>
 
-        <div class="grid__item--2 stepnumber"><span class="indices">3</span></div>
-        <div class="grid__item--6 steptext">Adjust font sizes and line heights</div>
+        <div class="step">
+          <div class="grid__item--2 stepnumber"><span class="indices">3</span></div>
+          <div class="grid__item--6 steptext">Adjust font sizes and line heights</div>
+        </div>
 
         </div>
 

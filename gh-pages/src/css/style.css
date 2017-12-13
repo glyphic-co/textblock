@@ -168,6 +168,13 @@ p.npmlink a {
       -ms-flex-direction: row;
           flex-direction: row;
 }
+
+.step {
+  display: flex;
+  flex-direction: row;
+  width:33%;
+}
+
 .ilt {
   background-image: url('../i/ilt-bw.png');
 }
@@ -737,12 +744,6 @@ span.clsbk {
 
 
 
-
-
-
-
-
-
 @media all and (max-width: 623px) {
 
   .intro {
@@ -760,6 +761,22 @@ span.clsbk {
             flex-direction: column-reverse;
     width: 100%;
   }
+
+.numbersteps {
+  flex-direction: column;
+}
+
+.step {
+  display: flex;
+  flex-direction: row;
+  width:100%;
+  margin-bottom: 1em;
+  max-width: 500px;
+}
+.step:last-child {
+  margin-bottom: 0;
+}
+
   .sampcon {
     -webkit-flex: 1;
         -ms-flex: 1;
