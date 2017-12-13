@@ -445,7 +445,7 @@ body {
   background: white;
 }
 ol, ul, li {
-  list-style: none;
+  /* list-style: none; */
 }
 /* tables still need 'cellspacing="0"' in the markup */
 table {
