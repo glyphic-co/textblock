@@ -80,6 +80,16 @@ text-decoration: none;
   position : relative;
   top : .035em;
 }*/
+
+.lowslash {
+  position : relative;
+  top : 0.16em;
+  margin-left: 0.05em;
+}
+.lowdash {
+  position : relative;
+  top : 0.06em;
+}
 p. {
   font-family: "Knockout 32 A", "Knockout 32 B";
   color: #b2b1aa;
