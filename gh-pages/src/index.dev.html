@@ -118,9 +118,9 @@
       minWidth:280,
       maxWidth:600,
       minFontSize:1.85,
-      maxFontSize:2.6,
-      minLineHeight:1.33,
-      maxLineHeight:1.25
+      maxFontSize:2.5,
+      minLineHeight:1.2,
+      maxLineHeight:1.1
       },{
       target:"h3.smpl2h3",
       minWidth:280,
@@ -383,7 +383,7 @@
         </div>
 
         <div class="step">
-          <div class="grid__item--2 stepnumber"><span class="indices">3</span></div>
+          <div class="grid__item--2 stepnumber"><span class="indices">&amp;</span></div>
           <div class="grid__item--6 steptext">Adjust font size and line heights across viewport widths</div>
         </div>
 
@@ -396,15 +396,17 @@
   <div class="tbcon">
     <div class="intro textblock">
 
-      <p> It’s really easy to setup. Textblock.js uses minimum and maximum values for font size, leading (<i>line height</i>), and measure (<i>container width</i>). The script calculates floating point values based on units defined within the document head (<i>or foot</i>):</p>
+      <p>Textblock.js helps you set perfect type across any responsive width. It’s easy to setup and very pleasing to use.</p>
+
+      <p>The script uses minimum and maximum values for font size, leading (<i>line height</i>), and measure (<i>container width</i>). The script calculates floating point values based on units defined within the document head (<i>or foot</i>):</p>
 
       <ul>
-        <li>Minimum<span class="lowslash">/</span>maximum font size</li>
-        <li>Minimum<span class="lowslash">/</span>maximum leading</li>
-        <li>Minimum<span class="lowslash">/</span>maximum measure</li>
+        <li>minimum<span class="lowslash">/</span>maximum font size</li>
+        <li>minimum<span class="lowslash">/</span>maximum leading</li>
+        <li>minimum<span class="lowslash">/</span>maximum measure</li>
       </ul>
 
-      <p>For easy math set the root em to 10px so em units are base 10, i.e. 2.4em = 24px. But any number will do because once you start adjusting the min<span class="lowslash">/</span>max numbers the experience is more visual than punching numbers into a calculator. And for us gridnicks, textblock gives you absolute control over calculating modular scales, in floating points.</p>
+      <p>For easy math, set the root em to 10px so em units are base 10, i.e. 2.4em = 24px. But any number will do because once you start adjusting the min<span class="lowslash">/</span>max numbers, the experience is more visual than punching numbers into a calculator. And for us gridnicks, textblock gives you absolute control over calculating modular scales, in floating points.</p>
 
       <h2>To Initialize</h2>
 
@@ -559,7 +561,7 @@
 
         <div class="chimpform" style="margin-top:0;"><!-- Begin MailChimp Signup Form -->
 
-<div class="button" style="background-color:#CBCAC2;"><a href="http://eepurl.com/Mcp11" id="mclist"><nobr>Subscribe</nobr></a></div>
+<div class="button" style="background-color:#000000;"><a href="http://eepurl.com/Mcp11" id="mclist"><nobr>Subscribe</nobr></a></div>
 
 <!--End mc_embed_signup--></div>
 
@@ -584,12 +586,12 @@
   <div class="grid__row feat" style="margin:2em 0 5em 0;">
     <div class="grid__row grid__row--2 ti five">
       <div class="grid__item samptxt">
-        <h3 class="smplh3">Type Anatomy Letterpress Print</h3>
-        <p class="smpltxt" style="margin-bottom:.33em;">We also made this hand printed reworking of the TDR’s anatomy diagram&nbsp;<span class="lowdash">–</span> printed four colors, offset &amp; letterpress, in a limited edition of 333.<br>&nbsp;</p>
-        <div itemprop="offers" itemscope itemtype="http://schema.org/Offer" class="button ord" style="background:none;padding:0;"><a href="https://type.fans/product/type-anatomy-letterpress-print/?ref=txtblck" id="anatomyone"><nobr>More at Glyphic</a></div>
+        <h3 class="smplh3">The Type Anatomy Letterpress&nbsp;Print</h3>
+        <p class="smpltxt" style="margin-bottom:.33em;">We also made this hand printed reworking of the anatomy diagram from the <i>Typographic Desk Reference</i>&nbsp;<span class="lowdash">–</span> printed four colors, offset &amp; letterpress, in a limited edition of 333.<br>&nbsp;</p>
+        <div itemprop="offers" itemscope itemtype="http://schema.org/Offer" class="button ord" style="background:none;padding:0;"><a href="https://type.fans/product/type-anatomy-letterpress-print/?ref=txtblck" id="anatomyone"><nobr>Get it at Glyphic</a></div>
         <p>&nbsp;</p>
       </div>
-      <div class="grid__item sampcon"><a href="https://type.fans/product/type-anatomy-letterpress-print/?ref=txtblck" id="anatomytwo"><img src="i/anatomyprintb.jpg" class="fives"></a></div>
+      <div class="grid__item sampcon"><a href="https://type.fans/product/type-anatomy-letterpress-print/?ref=txtblck" id="anatomytwo"><img src="i/type-anatomy-letterpress-print.jpg" class="fives"></a></div>
     </div>
   </div>
 
@@ -621,7 +623,7 @@
       <div class="grid__row grid__row--2 it">
         <div class="grid__item colophon">
           <b>textblock.js</b><br>
-          Copyright ©2017 Glyphic, released open source, and licensed under MIT<br>
+          Copyright © <span id="copyrightyear">1999</span> Glyphic, released open source, and licensed under MIT<br>
           &nbsp;
           </div>
 
@@ -653,12 +655,25 @@
     </div>
 
     <div class="grid__item">
-        <div class="grid__item webcolophon version">www v0.9.9<br>
+        <div class="grid__item webcolophon version">www v0.9.13<br>
           &nbsp;
         </div>
     </div>
   </div>
 </div>
+
+<!-- Years for copyright -->
+<script type="text/javascript">
+
+  creationyear = 2017;
+  currentyear = (new Date()).getFullYear();
+
+  if (currentyear > creationyear) {
+      document.getElementById("copyrightyear").innerHTML = creationyear.toString() + ' – ' + currentyear.toString();
+    } else {
+      document.getElementById("copyrightyear").innerHTML = creationyear.toString();
+    }
+</script>
 
 <script defer src="j/mpkern.min.js"></script>
 

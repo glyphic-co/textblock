@@ -213,7 +213,12 @@ p.npmlink a {
   font-family:"adobe-caslon-pro" !important;
   font-style: italic !important;
   font-weight: 400;
-  color:rgb(6, 182, 3) !important;
+  color:rgb(0, 0, 0) !important;
+  background-image: linear-gradient(to top,
+    rgba(0, 0, 0, 0) 30%,
+    rgba(0, 0, 0, 1) 30%,
+    rgba(0, 0, 0, 1) 33%,
+    rgba(0, 0, 0, 0) 33%);
 }
 .sampcon {
   overflow:hidden;
@@ -390,6 +395,7 @@ ul.inlined li {
   background-color: #e8e4e4;
   padding: 0 .25em;
   border-radius: .2em;
+  line-height: 1.5;
 }
 
 span.code {
@@ -973,11 +979,11 @@ span.measuremeta #calculatedtypesize {
 }
 
 #anatomyone {
-  color:#059203 !important;
+  color:#FF3B00 !important;
   background-image: linear-gradient(to top,
     rgba(0, 0, 0, 0) 5%,
-    rgba(5, 146, 3, 1) 5%,
-    rgba(5, 146, 3, 1) 14%,
+    rgba(255, 59, 0, 1) 5%,
+    rgba(255, 59, 0, 1) 14%,
     rgba(0, 0, 0, 0) 14%);
 }
 /*# sourceMappingURL=../dist/css/maps/style.css.map */
