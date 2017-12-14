@@ -370,7 +370,8 @@ ul.inlined {
 }
 ul.inlined li {
   list-style: none;
-  margin-bottom: .125em;
+  margin-bottom: .25em;
+
 }
 
 .inline-code, .code {
