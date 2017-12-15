@@ -93,7 +93,7 @@
       target:"#npmone,#npmtwo",
       minWidth:194,
       maxWidth:550,
-      minFontSize:0.6,
+      minFontSize:0.55,
       maxFontSize:1.0,
       minLineHeight:1.3,
       maxLineHeight:1.3
@@ -266,6 +266,9 @@
     font: 3em/1.33em "Knockout 52 A", "Knockout 52 B";
     vertical-align: middle;
   }
+  .samptxt p {
+    margin-bottom: 1em;
+  }
 
 
   @media all and (max-width: 899px) {
@@ -289,6 +292,18 @@
       width: auto;
     }
     .flag {margin-bottom: 3em;}
+    .indices {
+        font-size: 2.66em;
+      }
+      .samptxt p {
+        margin-bottom: .5em;
+      }
+      .samptxt .button.ord {
+        margin-bottom: .66em;
+      }
+      .order .button.ord {
+        margin-bottom: 0;
+      }
   }
 
   @media all and (max-width: 375px) {
@@ -586,9 +601,9 @@
   <div class="grid__row feat" style="margin:2em 0 5em 0;">
     <div class="grid__row grid__row--2 ti five">
       <div class="grid__item samptxt">
-        <h3 class="smplh3">The Typographic Desk Reference 2nd&nbsp;Ed.</h3>
-        <p class="smpltxt" style="margin-bottom:1em;">A reference guide of typographic terms for Latin based writing systems. The Typographic Desk Reference (TDR) is an encyclopedia, listing countless entries on the typographic arts.<br>&nbsp;</p>
-        <div itemprop="offers" itemscope itemtype="http://schema.org/Offer" class="button ord" style="background:none;padding:0;"><a href="http://typedeskref.com/?ref=txtblck" id="anatomyone"><nobr>More at typedeskref.com</a></div>
+        <h3 class="smplh3">The Typographic Desk Reference, 2nd&nbsp;Ed.</h3>
+        <p class="smpltxt">The Typographic Desk Reference (TDR) is an encyclopedia, listing countless entries on the typographic arts.<br>&nbsp;</p>
+        <div itemprop="offers" itemscope itemtype="http://schema.org/Offer" class="button ord" style="background:none;padding:0;"><a href="http://typedeskref.com/?ref=txtblck" id="anatomyone"><nobr>Get a Copy at typedeskref.com</a></div>
         <p>&nbsp;</p>
       </div>
       <div class="grid__item sampcon"><a href="http://typedeskref.com/?ref=txtblck" id="anatomytwo"><img src="i/TDRbook.jpg" class="fives"></a></div>
@@ -602,10 +617,24 @@
       <div class="grid__item sampcon"><a href="https://type.fans/product/type-anatomy-letterpress-print/?ref=txtblck" id="anatomytwo"><img src="i/type-anatomy-letterpress-print.jpg" class="fives"></a></div>
       <div class="grid__item samptxt">
         <h3 class="smplh3">The Type Anatomy Letterpress Print, Limited&nbsp;Run</h3>
-        <p class="smpltxt" style="margin-bottom:1em;">A hand printed edition of the anatomy diagram from the <i>Typographic Desk Reference</i>, printed four colors, offset &amp; letterpress, in a limited edition of 333.<br>&nbsp;</p>
-        <div itemprop="offers" itemscope itemtype="http://schema.org/Offer" class="button ord" style="background:none;padding:0;"><a href="https://type.fans/product/type-anatomy-letterpress-print/?ref=txtblck" id="anatomyone"><nobr>Get it at Glyphic</a></div>
+        <p class="smpltxt">A handmade print of the anatomy diagram from the <i>Typographic Desk Reference</i>, printed four colors, offset &amp; letterpress, in a limited edition of 333.<br>&nbsp;</p>
+        <div itemprop="offers" itemscope itemtype="http://schema.org/Offer" class="button ord" style="background:none;padding:0;"><a href="https://type.fans/product/type-anatomy-letterpress-print/?ref=txtblck" id="anatomyone"><nobr>Get a Print at Glyphic</a></div>
         <p>&nbsp;</p>
       </div>
+    </div>
+  </div>
+</div>
+
+<div class="grid">
+  <div class="grid__row feat" style="margin:2em 0 5em 0;">
+    <div class="grid__row grid__row--2 ti five">
+      <div class="grid__item samptxt">
+        <h3 class="smplh3">Textblock.js</h3>
+        <p class="smpltxt">Set perfectly responsive type across viewport widths.<br>&nbsp;</p>
+        <div itemprop="offers" itemscope itemtype="http://schema.org/Offer" class="button ord" style="background:none;padding:0;"><a href="#" id="anatomyone"><nobr>Get Textblock.js</a></div>
+        <p>&nbsp;</p>
+      </div>
+      <div class="grid__item sampcon"><a href="#" id="anatomytwo"><img src="i/textblockjs.jpg" class="fives"></a></div>
     </div>
   </div>
 </div>
@@ -648,7 +677,7 @@
 
     <div class="grid__item">
       <div class="grid__row grid__row--2 it">
-        <div class="grid__item colophon">Made with straight JavaScript so  no extra overhead is required.<br>
+        <div class="grid__item colophon">Made with straight JavaScript meaning there are no dependencies.<br>
         &nbsp;<br></div>
 
         <div class="grid__item colophon">textblock.min.js weighs in at under 2 kilobytes.<br>

@@ -790,6 +790,9 @@ span.clsbk {
   margin-bottom: 2em;
   max-width: 500px;
 }
+.indices {
+    font-size: 2.66em;
+  }
 .step:last-child {
   margin-bottom: 0;
 }
