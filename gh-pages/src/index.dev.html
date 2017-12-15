@@ -325,6 +325,32 @@
     }
   }
 
+  .nav-global {
+    display: flex;
+    position: relative;
+    top: 0;
+    left: 0;
+    height: 45px;
+    width: 100vw;
+    /* background-color: #282c34; */
+    /* color: rgba(245, 244, 242, 1); */
+    color: rgba(16, 17, 20, 0.33);
+    align-items: center;
+    padding: .125em 1em .125em 1em;
+    font: 1.6em/1.0 "Knockout 32 A", "Knockout 32 B";
+  }
+  .nav-global span, .nav-global img {
+    margin-right: 2em;
+  }
+  .nav-global span.active {
+    font-family: "Knockout 52 A", "Knockout 52 B";
+    color: rgba(16, 17, 20, 1);
+  }
+  #glyphic {
+    height: 23px;
+    width: auto;
+  }
+
   </style>
   <!-- Facebook Pixel Code -->
   <!-- todo — entire section -->
@@ -363,13 +389,15 @@
      }(document, 'script', 'facebook-jssdk'));
   </script> -->
 
+<div class="nav-global"><img itemprop="image" src="i/glyphic.svg" id="glyphic"> <span class="active">Made by Glyphic</span> <span>Articles</span> <span>Shop</span></div>
+<hr style="margin:0 0 4em 0;border-top: 1px solid rgba(178, 177, 170, .4);border-bottom: 1px solid #fff;">
+
 <div class="grid tx">
     <div class="grid__row grid__row--2 flagbox">
       <div class="grid__item flagmrgn"></div>
       <div class="grid__item--7 flag">
         <h1 class="txtblck" itemprop="name">Textblock.js</h1>
-        <!-- <h2 class="title" itemprop="name">Responsive Typesetting</span></h2> -->
-        <p class="emph" itemprop="description">Textblock sets responsive type beyond standard CSS breakpoints. It adjusts size and leading to cast continuously scaled type across varying screen widths. It works on top of your current CSS as a progressive enhancement.</p>
+        <p class="emph" itemprop="description">Textblock sets size and leading to cast continuously scaled type across responsive widths. It works on top of your current CSS as a progressive enhancement.</p>
         <div class="button"><a href="#" id="githubone"><span class="github-icon">Download from Github</span></div>
         <p class="npmlink"><a href="#" id="npmone">or <span class="underline">npm install textblock</span></a></p>
 
@@ -381,7 +409,7 @@
 
 </div>
 
-<hr class="grid100" style="margin:5em 0 3em 0;border-top: 2px solid rgba(178, 177, 170, .25);border-bottom: 2px solid #fff;">
+<hr class="grid100" style="margin:5em 0 3em 0;border-top: 1px solid rgba(178, 177, 170, .4);border-bottom: 2px solid #fff;">
 
 
 
@@ -406,7 +434,7 @@
 
 
 
-<hr class="grid100" style="margin:3em 0 6em 0;border-top: 2px solid rgba(178, 177, 170, .25);border-bottom: 2px solid #fff;">
+<hr class="grid100" style="margin:3em 0 6em 0;border-top: 1px solid rgba(178, 177, 170, .4);border-bottom: 2px solid #fff;">
 
   <div class="tbcon">
     <div class="intro textblock">
@@ -595,7 +623,7 @@
   </div>
 </div>
 
-<hr class="grid100" style="margin:5em 0 6em 0;border-top: 2px solid rgba(178, 177, 170, .3);border-bottom: 2px solid #fff;">
+<hr class="grid100" style="margin:5em 0 6em 0;border-top: 1px solid rgba(178, 177, 170, .4);border-bottom: 2px solid #fff;">
 
 <div class="grid">
   <div class="grid__row feat" style="margin:2em 0 5em 0;">
@@ -639,7 +667,7 @@
   </div>
 </div>
 
-<hr class="grid100" style="margin:5em 0 6em 0;border-top: 2px solid rgba(178, 177, 170, .3);border-bottom: 2px solid #fff;">
+<hr class="grid100" style="margin:5em 0 6em 0;border-top: 1px solid rgba(178, 177, 170, .4);border-bottom: 2px solid #fff;">
 
 <div class="grid">
 
@@ -697,7 +725,7 @@
     </div>
 
     <div class="grid__item">
-        <div class="grid__item webcolophon version">www v0.9.16<br>
+        <div class="grid__item webcolophon version">www v0.9.19<br>
           &nbsp;
         </div>
     </div>
