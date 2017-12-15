@@ -228,7 +228,7 @@ p.npmlink a {
   margin-right: 5vw;
 }
 .button.ord {
-  margin: 2.5vw 5vw 0 5vw;
+  margin: 0 5vw 0 5vw;
 }
 .npmlink.ord {
   margin: .5em 5vw 7vw 5.1vw;
@@ -761,7 +761,7 @@ span.clsbk {
 
 
 
-@media all and (max-width: 623px) {
+@media all and (max-width: 523px) {
 
   .intro {
     padding:0 0 1vw 0;
@@ -819,7 +819,7 @@ span.clsbk {
     margin-right: 6vw;
   }
   .button.ord {
-    margin: 3vw 6vw 0 6vw;
+    margin: 0 6vw 0 6vw;
   }
   .npmlink.ord {
     margin: .5em 6vw 7vw 6.1vw;
@@ -931,7 +931,7 @@ H3 {
   margin-right: 84px;
 }
 .button.ord {
-  margin: 42px 84px 0 84px;
+  margin: 0 84px 0 84px;
 }
 .npmlink.ord {
   margin: .5em 84px 7vw 86px;
