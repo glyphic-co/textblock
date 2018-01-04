@@ -12,7 +12,7 @@ The script calculates floating point values based on units defined within the do
 
 The math is easiest if you set the root em (rem) to 10px so em units are base 10, i.e. 2.4em = 24px.
 
-### To initialize
+### To initialize, add the element to be resized (required)
 ```
 Textblock([{
   target:".some-element"
@@ -20,7 +20,6 @@ Textblock([{
 ```
 
 ### Optional Parameters
-- `target`: The element that should be resized `.your-class p, #cool-id .another` (required)
 - `minWidth`: default `280`
 - `maxWidth`: default `800`
 - `minFontSize`: default `1.9`
@@ -59,3 +58,4 @@ Textblock([
     maxFontSize: 3.6,
   }
 ]);
+```
