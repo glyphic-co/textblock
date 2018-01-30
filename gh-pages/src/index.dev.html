@@ -326,30 +326,43 @@
   }
 
   .nav-global {
-    display: flex;
-    position: relative;
-    top: 0;
-    left: 0;
-    height: 45px;
-    width: 100vw;
-    /* background-color: #282c34; */
-    /* color: rgba(245, 244, 242, 1); */
-    color: rgba(16, 17, 20, 0.33);
-    align-items: center;
-    padding: .125em 1em .125em 1em;
-    font: 1.6em/1.0 "Knockout 32 A", "Knockout 32 B";
-  }
-  .nav-global span, .nav-global img {
-    margin-right: 2em;
-  }
-  .nav-global span.active {
-    font-family: "Knockout 52 A", "Knockout 52 B";
-    color: rgba(16, 17, 20, 1);
-  }
-  #glyphic {
-    height: 23px;
-    width: auto;
-  }
+  display: flex;
+  justify-content: space-between;
+  position: relative;
+  top: 0;
+  left: 0;
+  height: 66px;
+  width: 100vw;
+  max-width: 1024px;
+  color: rgba(16, 17, 20, 0.33);
+  align-items: center;
+  padding: 1em 1em .125em 1em;
+  margin: 0 auto;
+  font: 1.6em/1.0 "Knockout 32 A", "Knockout 32 B";
+}
+.nav-global img {
+  display: flex;
+  margin-right: 0;
+}
+.nav-global .links {
+  display: flex;
+}
+.nav-global a {
+  margin-left: 3em;
+  color: rgba(16, 17, 20, 0.33);
+  font-family: "Knockout 32 A", "Knockout 32 B";
+}
+.nav-global a:first-child {
+  margin-left: 1em;
+}
+.nav-global a.active {
+  font-family: "Knockout 52 A", "Knockout 52 B";
+  color: rgba(16, 17, 20, 1);
+}
+#glyphic {
+  height: 28px;
+  width: auto;
+}
 
   </style>
   <!-- Facebook Pixel Code -->
@@ -389,7 +402,7 @@
      }(document, 'script', 'facebook-jssdk'));
   </script> -->
 
-<div class="nav-global"><img itemprop="image" src="i/glyphic.svg" id="glyphic"> <span class="active">Made by Glyphic</span> <span>Articles</span> <span>Shop</span></div>
+<div class="nav-global"><img itemprop="image" src="i/glyphic.svg" id="glyphic"> <span class="links"><a href="#">Work</a> <a href="about.html" class="active">About</a> <a href="contact.html">Contact</a></span></div>
 <hr style="margin:0 0 4em 0;border-top: 1px solid rgba(178, 177, 170, .4);border-bottom: 1px solid #fff;">
 
 <div class="grid tx">
@@ -397,7 +410,7 @@
       <div class="grid__item flagmrgn"></div>
       <div class="grid__item--7 flag">
         <h1 class="txtblck" itemprop="name">Textblock.js</h1>
-        <p class="emph" itemprop="description">Textblock sets size and leading to cast continuously scaled type across responsive widths. It works on top of your current CSS as a progressive enhancement.</p>
+        <p class="emph" itemprop="description">Textblock sets size and leading to cast continuously responsive type. It works over your current CSS as a progressive enhancement.</p>
         <div class="button"><a href="#" id="githubone"><span class="github-icon">Download from Github</span></div>
         <p class="npmlink"><a href="#" id="npmone">or <span class="underline">npm install textblock</span></a></p>
 
@@ -426,7 +439,7 @@
         </div>
 
         <div class="step">
-          <div class="grid__item--2 stepnumber"><span class="indices">&amp;</span></div>
+          <div class="grid__item--2 stepnumber"><span class="indices">3</span></div>
           <div class="grid__item--6 steptext">Adjust font size and line heights across viewport widths</div>
         </div>
 
@@ -439,17 +452,15 @@
   <div class="tbcon">
     <div class="intro textblock">
 
-      <p>Textblock.js helps you set perfect type across any responsive width. It’s easy to setup and very pleasing to use.</p>
+      <p>Textblock.js helps you set perfect type across any responsive width. It’s easy to setup and pleasing to use.</p>
 
-      <p>The script uses minimum and maximum values for font size, leading (<i>line height</i>), and measure (<i>container width</i>). The script calculates floating point values based on units defined within the document head (<i>or foot</i>):</p>
+      <p>The script calculates the setting based on minimum and maximum values for font size, line height, and container width — all defined within the script:</p>
 
       <ul>
         <li>minimum<span class="lowslash">/</span>maximum font size</li>
-        <li>minimum<span class="lowslash">/</span>maximum leading</li>
-        <li>minimum<span class="lowslash">/</span>maximum measure</li>
+        <li>minimum<span class="lowslash">/</span>maximum line height</li>
+        <li>minimum<span class="lowslash">/</span>maximum container width</li>
       </ul>
-
-      <p>For easy math, set the root em to 10px so em units are base 10, i.e. 2.4em = 24px. But any number will do because once you start adjusting the min<span class="lowslash">/</span>max numbers, the experience is more visual than punching numbers into a calculator. And for us gridnicks, textblock gives you absolute control over calculating modular scales, in floating points.</p>
 
       <h2>To Initialize</h2>
 
@@ -472,6 +483,9 @@
         <li><span class="inline-code"><b>container</b></span>: The container width to measure. Defaults to <span class="inline-code">"parent"</span> and can alternately be set to <span class="inline-code">"self"</span>.</li>
         <li><span class="inline-code"><b>units</b></span>: default <span class="inline-code">"em"</span></li>
       </ul>
+
+
+      <p>For easy math, you can set the root em to 10px so that subsequent em units are base 10 (i.e. 2.4em = 24px). But any number will do because once you start adjusting the min<span class="lowslash">/</span>max numbers, the experience is more visual than calculating. But if you prefer a more scientific approach, textblock gives you absolute control for setting systems such as with modular scales, output in floating points.</p>
 
       <h2>Example Including Extra Parameters</h2>
 
