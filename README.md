@@ -1,18 +1,18 @@
 # Textblock.js
 
-Textblock provides continuous responsive typesetting beyond standard CSS breakpoints. It adjusts type size and line height to set perfect type across varying screen widths. The script works on top of your current CSS, meaning you may already have a fallback.
+Textblock optimizes size and leading to cast perfectly set type across any responsive width. It works over your current CSS as a progressive enhancement.
 
-It uses minimum and maximum values for font size, leading (line height), and measure (the container width).
-
-The script calculates floating point values based on units defined within the document head (or foot):
+The script uses minimum and maximum values for size and line height plotted over the min/max range of container widths:
 
 - Minimum/maximum font size
-- Minimum/maximum font leading (line height)
+- Minimum/maximum font line height
 - Minimum/maximum container width
 
-The math is easiest if you set the root em (rem) to 10px so em units are base 10, i.e. 2.4em = 24px.
+For instance, if the min/max font size was set to 1em/2em and the container width to 300px/900px: at a width of 300px, the type would be 1em; at 600px, the type would be 1.5em.
 
-### To initialize
+You can simplify the math if you set the root em (rem) to 10px so em units are base 10, i.e. 2.4em = 24px.
+
+### To initialize, add the element to be resized (required)
 ```
 Textblock([{
   target:".some-element"
@@ -20,7 +20,6 @@ Textblock([{
 ```
 
 ### Optional Parameters
-- `target`: The element that should be resized `.your-class p, #cool-id .another` (required)
 - `minWidth`: default `280`
 - `maxWidth`: default `800`
 - `minFontSize`: default `1.9`
@@ -59,3 +58,4 @@ Textblock([
     maxFontSize: 3.6,
   }
 ]);
+```

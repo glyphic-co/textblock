@@ -6,30 +6,25 @@
   <title>textblock sample</title>
   <link rel="stylesheet" href="demo.min.css">
 
-
-  <!-- Needs JQuery -->
- <!--  <script src="http://code.jquery.com/jquery-latest.min.js"></script> -->
-  <!-- / -->
-
-
-  <!-- And this little script -->
   <script src="textblock.js"></script>
-  <!-- / -->
 
-
-  <!-- This JSON code is kind of like a style sheet and is used to scale text elements. -->
+  <!-- Edit this JSON code to scale text elements. -->
 
   <script>
     Textblock([
       {
         target:"#jupiter p",
-        minFontSize: 1.9,
+        minFontSize: 1.8,
         maxFontSize: 2.6
       },
       {
         target:".saturn p",
-        minFontSize: 10,
+        minFontSize: 18,
         maxFontSize: 26,
+        minWidth: 400,
+        maxWidth: 800,
+        minLineHeight: 1.33,
+        maxLineHeight: 1.2,
         units: 'px'
       }
     ]);
@@ -60,15 +55,6 @@
 
 
 
-
-
-
-
-
-<!-- Don't worry about this script. It's just used here to set the margins. -->
-<script>
-// function substrate(){var a=$(window).width(),b=$(".textblock").width();if(b>800&&$(".textblock").css("max-width","800px"),a>1200)var c="20vw";else var c=a/33/2+"vw";$(".tbcon").css({margin:"0 "+c}),$(".textblock").css({margin:"0 auto"}),$("#vpw").text(a)}function measure(){$(textblock.textblocks).each(function(a){var b=textblock.textblocks[a].id,c=textblock.textblocks[a].minwdth,d=textblock.textblocks[a].maxwdth,e=textblock.textblocks[a].minfs,f=textblock.textblocks[a].maxfs,g=textblock.textblocks[a].minld,h=textblock.textblocks[a].maxld,i=$(window).width(),j=$(b).parent().width(),k=c/g,l=d/h,m=e+(f-e)/(d-c)*(j-c),n=m,o=k+(l-k)/(d-c)*(j-c),p=j/o;$(b).css("font-size",n+"em"),$(b).css("line-height",p);parseInt($(b).css("font-size"));624>i?($(".txt2").removeClass("smpltxt2"),$(".2h3").removeClass("smpl2h3"),$(".ft").removeClass("grid__row")):i>624&&($(".txt2").addClass("smpltxt2"),$(".2h3").addClass("smpl2h3"),$(".ft").addClass("grid__row"))})}$(document).ready(function(a){substrate()}),$(window).resize(function(){substrate()}),$(document).ready(function(a){measure()}),$(window).resize(function(){measure()});
-</script>
 
 </body>
 </html>
