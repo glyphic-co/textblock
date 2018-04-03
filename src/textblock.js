@@ -52,15 +52,13 @@ var Textblock = function(textblocks) {
       var calcleading  = msr_width / leadingvariation;
 
       var gradevariation = tb_ming + ((tb_maxg - tb_ming) / (tb_maxw - tb_minw)) * (msr_width - tb_minw);
-      // var calcgrade = gradevariation;
       var gradeMath = Math.max(Math.min(gradevariation, tb_ming), tb_maxg);
       var variableGradeSettings = '"wght" ' + gradeMath;
-      console.log(variableGradeSettings);
 
       return {
         fontSize: Math.min(Math.max(calctypesize, tb_minf), tb_maxf),
         lineHeight: Math.max(Math.min(calcleading, tb_minl), tb_maxl),
-        fontVariationSettings: variableGradeSettings,
+        fontVariationSettings: variableGradeSettings
       }
     }
   }
