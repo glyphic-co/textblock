@@ -460,6 +460,7 @@
         <li>minimum<span class="lowslash">/</span>maximum font size</li>
         <li>minimum<span class="lowslash">/</span>maximum line height</li>
         <li>minimum<span class="lowslash">/</span>maximum container width</li>
+        <li>minimum<span class="lowslash">/</span>maximum grades (variable fonts only)</li>
       </ul>
 
       <h2>To Initialize</h2>
@@ -482,10 +483,14 @@
         <li><span class="inline-code"><b>maxLineHeight</b></span>: default <span class="inline-code">1.25</span></li>
         <li><span class="inline-code"><b>container</b></span>: The container width to measure. Defaults to <span class="inline-code">"parent"</span> and can alternately be set to <span class="inline-code">"self"</span>.</li>
         <li><span class="inline-code"><b>units</b></span>: default <span class="inline-code">"em"</span></li>
+        <li><span class="inline-code"><b>minVariableGrade</b></span>: A variable font weight for the small size, for example <span class="inline-code">450</span></li>
+        <li><span class="inline-code"><b>maxVariableGrade</b></span>: A variable font weight for the large size, i.e. <span class="inline-code">400</span></li>
       </ul>
 
 
       <p>For easy math, you can set the root em to 10px so that subsequent em units are base 10 (i.e. 2.4em = 24px). But any number will do because once you start adjusting the min<span class="lowslash">/</span>max numbers, the experience is more visual than calculating. But if you prefer a more scientific approach, textblock gives you absolute control for setting systems such as with modular scales, output in floating points.</p>
+
+      <p>If you’re using variable fonts, the min/maxVariableGrade parameters provide a way to simulate grades — micro-variations in weight to set smaller sizes slightly bolder.</p>
 
       <h2>Example Including Extra Parameters</h2>
 
@@ -500,6 +505,8 @@
           &emsp;maxLineHeight: 1.25,<br>
           &emsp;container: "self",<br>
           &emsp;units: "rem"<br>
+          &emsp;minVariableGrade: 366,<br>
+          &emsp;maxVariableGrade: 300<br>
         }]);
       </span></p>
 
@@ -516,7 +523,9 @@
             &emsp;&emsp;target:".another",<br>
             &emsp;&emsp;minFontSize: 2.4,<br>
             &emsp;&emsp;maxFontSize: 3.6,<br>
-            &emsp;&emsp;container: "self"<br>
+            &emsp;&emsp;container: "self",<br>
+            &emsp;&emsp;minVariableGrade: 450,<br>
+            &emsp;&emsp;maxVariableGrade: 400<br>
           &emsp;}<br>
         ]);
       </span></p>

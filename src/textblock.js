@@ -16,6 +16,7 @@ var Textblock = function(textblocks) {
         if (measurements) {
           el.style.fontSize = measurements.fontSize + block.units;
           el.style.lineHeight = measurements.lineHeight;
+          el.style.fontVariationSettings = measurements.fontVariationSettings;
         }
       })
     });
@@ -30,6 +31,8 @@ var Textblock = function(textblocks) {
       var tb_minl = block.minLineHeight;
       var tb_maxl = block.maxLineHeight;
       var tb_cont = block.container;
+      var tb_ming = block.minVariableGrade;
+      var tb_maxg = block.maxVariableGrade;
 
       switch(tb_cont) {
         case 'self':
@@ -48,9 +51,16 @@ var Textblock = function(textblocks) {
       var leadingvariation = minld + ((maxld - minld) / (tb_maxw - tb_minw)) * (msr_width - tb_minw);
       var calcleading  = msr_width / leadingvariation;
 
+      var gradevariation = tb_ming + ((tb_maxg - tb_ming) / (tb_maxw - tb_minw)) * (msr_width - tb_minw);
+      // var calcgrade = gradevariation;
+      var gradeMath = Math.max(Math.min(gradevariation, tb_ming), tb_maxg);
+      var variableGradeSettings = '"wght" ' + gradeMath;
+      console.log(variableGradeSettings);
+
       return {
         fontSize: Math.min(Math.max(calctypesize, tb_minf), tb_maxf),
-        lineHeight: Math.max(Math.min(calcleading, tb_minl), tb_maxl)
+        lineHeight: Math.max(Math.min(calcleading, tb_minl), tb_maxl),
+        fontVariationSettings: variableGradeSettings,
       }
     }
   }
