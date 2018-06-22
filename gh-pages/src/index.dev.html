@@ -39,7 +39,7 @@
   <link rel="stylesheet" href="c/textblock.min.css">
   <!-- <link rel="stylesheet" href="c/standardize.css">
   <link href='css/style.css' rel='stylesheet' type='text/css'> -->
-  <link rel="stylesheet" type="text/css" href="https://cloud.typography.com/6889374/806608/css/fonts.css" />
+  <link rel="stylesheet" type="text/css" href="https://cloud.typography.com/6373956/7252172/css/fonts.css" />
   <script async src="https://use.typekit.net/apl7hcn.js"></script>
   <script>try{Typekit.load({ async: true });}catch(e){}</script>
   <script src="http://code.jquery.com/jquery-latest.min.js"></script>
@@ -85,23 +85,23 @@
       target:".button",
       minWidth:194,
       maxWidth:525,
-      minFontSize:1.3,
-      maxFontSize:2.2,
+      minFontSize:1.5,
+      maxFontSize:2.3,
       minLineHeight:1,
       maxLineHeight:1
       },{
       target:".steptext",
       minWidth:194,
       maxWidth:326,
-      minFontSize:1.3,
-      maxFontSize:1.6,
+      minFontSize:1.4,
+      maxFontSize:1.65,
       minLineHeight:1.2,
       maxLineHeight:1.2
       },{
       target:"#npmone,#npmtwo",
       minWidth:194,
       maxWidth:550,
-      minFontSize:0.55,
+      minFontSize:0.6,
       maxFontSize:1.0,
       minLineHeight:1.3,
       maxLineHeight:1.3
@@ -214,7 +214,6 @@
   padding: 0.6em 0.7em;
   border-radius: .2em;
   background-color: #FF3B00;
-  font: normal 2.4em/1 "Knockout 52 A", "Knockout 52 B";
   text-align: left;
   color: #FFF;
   }
@@ -225,14 +224,18 @@
   color: #FFF !important;
   text-decoration: none;
   }
+  .button a {
+    font-family: "Ringside Narrow A", "Ringside Narrow B";
+    font-weight: 700;
+  }
   p.txtblck {
-    font-family: "Knockout 32 A", "Knockout 32 B";
+    font-family: "OperatorMono-Book";
     color: #b2b1aa;
     margin: 0.2em 0 0 0.1em;
     font-size: 16px;
   }
   p.npmlink a {
-    font-family: "Knockout 32 A", "Knockout 32 B";
+    font-family: "OperatorMono-Book";
     color: #b2b1aa;
     font-size: 16px;
   }
@@ -257,21 +260,23 @@
   .steptext {
     display: flex;
     align-self: flex-start;
-    font: 1.6em/1.2em "Knockout 32 A", "Knockout 32 B";
+    font: 1.6em/1.2em "Ringside Narrow A", "Ringside Narrow B";
+    font-weight: 400;
     color:#323232;
     margin: .125em 2.5em 0 0;
     vertical-align: middle;
   }
   .indices {
-    width: 1.33em;
-    height: 1.33em;
+    width: 1.4em;
+    height: 1.4em;
     background-color: #323232;
     border-radius: 50%;
     color: #FFF;
     text-align: center;
     vertical-align: middle;
     line-height: 1.33em;
-    font: 3em/1.33em "Knockout 52 A", "Knockout 52 B";
+    font: 3em/1.33em "Ringside Narrow A", "Ringside Narrow B";
+    font-weight: 800;
     vertical-align: middle;
   }
   .samptxt p {
@@ -346,7 +351,7 @@
   align-items: center;
   padding: 1em 1em .125em 1em;
   margin: 0 auto;
-  font: 1.6em/1.0 "Knockout 32 A", "Knockout 32 B";
+  font: 1.6em/1.0 "OperatorMono-Book";
 }
 .nav-global img {
   display: flex;
@@ -355,17 +360,12 @@
 .nav-global .links {
   display: flex;
 }
-.nav-global a {
-  margin-left: 3em;
-  color: rgba(16, 17, 20, 0.33);
-  font-family: "Knockout 32 A", "Knockout 32 B";
+#main-nav span a {
+  font-family: "Ringside Narrow A", "Ringside Narrow B";
+  color: #232323;
 }
-.nav-global a:first-child {
+#main-nav span a:first-child {
   margin-left: 1em;
-}
-.nav-global a.active {
-  font-family: "Knockout 52 A", "Knockout 52 B";
-  color: rgba(16, 17, 20, 1);
 }
 #glyphic {
   height: 28px;
@@ -373,7 +373,7 @@
 }
 
 #navcontainer {
-  border-bottom: 1px solid rgba(178, 177, 170, .4);
+  /* border-bottom: 1px solid rgba(178, 177, 170, .4); */
 }
 #main-nav {
   display: flex;
@@ -381,6 +381,8 @@
   padding: 3em 1em 1em 1em;
   justify-content: space-between;
   min-height: 80px;
+  margin: 0 auto;
+  max-width: 1024px;
 }
 #main-nav img:first-child {
   margin-top: 1px;
@@ -391,13 +393,11 @@
   text-decoration: none;
   font-weight: 500;
   margin-right: 1em;
+  color: #323232;
 }
 #main-nav a:last-child {
   margin-right: 0;
 }
-#main-nav a {
-    margin-right: 1em;
-  }
 
   @media (max-width: 440px) {
   #main-nav img:first-child {
@@ -457,9 +457,8 @@
      }(document, 'script', 'facebook-jssdk'));
   </script> -->
 
-<div id="navcontainer"><nav role="navigation" id="main-nav" style="font-size: 1.66em; line-height: 1.33;"><a class="glyphic-id-link" href="#"><img src="/i/glyphic.svg" class="glyphic-id"></a><span><a href="/what-we-do">What We Do</a><a href="/contact">Contact Us</a></span></nav></div>
+<div id="navcontainer"><nav role="navigation" id="main-nav"><a class="glyphic-id-link" href="https://glyphic.design"><img src="/i/glyphic.svg" class="glyphic-id"></a><span><a href="https://glyphic.design/what-we-do">What We Do</a><a href="https://glyphic.design/contact">Contact Us</a></span></nav></div>
 
-<div class="nav-global"><a href="#"><img itemprop="image" src="i/glyphic.svg" id="glyphic"></a> <span class="links"><a href="#">What We Do</a> <a href="#">Contact Us</a></span></div>
 <hr style="margin:0 0 4em 0;border-top: 1px solid rgba(178, 177, 170, .4);border-bottom: 1px solid #fff;">
 
 <div class="grid tx">
@@ -467,7 +466,7 @@
       <div class="grid__item flagmrgn"></div>
       <div class="grid__item--7 flag">
         <h1 class="txtblck" itemprop="name">Textblock.js</h1>
-        <p class="emph" itemprop="description">Textblock sets size and leading to cast continuously responsive type. It works over your current CSS as a progressive enhancement.</p>
+        <p class="emph" itemprop="description">Textblock adjusts size and leading to cast continuously responsive type. It works over your current CSS as a progressive enhancement.</p>
         <div class="button"><a href="#" id="githubone"><span class="github-icon">Download from Github</span></div>
         <p class="npmlink"><a href="#" id="npmone">or <span class="underline">npm install textblock</span></a></p>
 
@@ -509,7 +508,7 @@
   <div class="tbcon">
     <div class="intro textblock">
 
-      <p>Textblock.js helps you set perfect type across any responsive width. It’s easy to setup and pleasing to use.</p>
+      <p>Textblock.js helps you set perfect type across any responsive width. It’s easy to setup and use.</p>
 
       <p>The script calculates the setting based on minimum and maximum values for font size, line height, and container width — all defined within the script:</p>
 

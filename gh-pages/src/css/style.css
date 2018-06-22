@@ -91,7 +91,7 @@ text-decoration: none;
   top : 0.06em;
 }
 p. {
-  font-family: "Knockout 32 A", "Knockout 32 B";
+  font-family: "OperatorMono-Book";
   color: #b2b1aa;
   margin: 0.2em 0 0 0.1em;
 }
@@ -99,9 +99,11 @@ p.npmlink {
   font-size: 16px;
 }
 p.npmlink a {
-  font-family: "Knockout 32 A", "Knockout 32 B";
+  font-family: "OperatorMono-Book";
   color: #b2b1aa;
-  /*font-size: 0.8em;*/
+}
+.npmlink a span {
+  font-style: italic;
 }
 .underline {
   text-decoration: underline;
@@ -350,13 +352,15 @@ h1 img, .textblock-icon {
   color: rgba(0, 0, 0, 0.66);
 }
 H2 {
-  font: normal 2.5em/1.2 "Knockout 51 A", "Knockout 51 B";
+  font: normal 2.5em/1.2 "Ringside Narrow A", "Ringside Narrow B";
   margin: 1.66em 0 1em 0;
   color: #000;
+  font-weight: 700;
 }
 H3 {
-  font: normal 2.6em/1.3 "Knockout 51 A", "Knockout 51 B";
+  font: normal 2.6em/1.3 "Ringside Narrow A", "Ringside Narrow B";
   padding: 5vw 0 1em 0;
+  font-weight: 700;
 }
 
 .grid__item p,
@@ -390,7 +394,7 @@ ul.inlined li {
 }
 
 .inline-code, .code {
-  font-family: "SourceCodePro-Regular";
+  font-family: "OperatorMono-Book";
   font-size: .8em;
   background-color: #e8e4e4;
   padding: 0 .25em;
@@ -473,7 +477,7 @@ p.npmlink a {
 }*/
 
 a:link, a:visited, a:hover, a:active {
-  font-family: "Knockout 52 A", "Knockout 52 B";
+  font-family: "OperatorMono-Bold";
   color: rgb(7, 210, 4);
 }
 
@@ -630,7 +634,7 @@ span.clsbk {
 }
 
 .bnote {
-  font-family: "Knockout 32 A", "Knockout 32 B";
+  font-family: "OperatorMono-Book";
   font-size: 1.3em;
   width:100vw;
   position:relative; text-align:right;
@@ -664,7 +668,7 @@ span.clsbk {
 /* positions input field horizontally */
 
 #mce-EMAIL {
-  font-family: "Knockout 32 A", "Knockout 32 B";
+  font-family: "OperatorMono-Book";
   font-size: 1.8em;
   border: 2px solid rgba(224, 223, 221, 1);
   color: #343434;
@@ -686,7 +690,7 @@ span.clsbk {
 /* positions button horizontally in line with input */
 
 .chimpbutton {
-  font-family: "Knockout 32 A", "Knockout 32 B";
+  font-family: "OperatorMono-Book";
   font-size: 1.4em;
   color: #fff;
   background-color: rgba(224, 223, 221, 1);
