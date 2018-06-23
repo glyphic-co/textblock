@@ -83,7 +83,7 @@ text-decoration: none;
 
 .lowslash {
   position : relative;
-  top : 0.16em;
+  top : 0.13em;
   margin-left: 0.05em;
 }
 .lowdash {
@@ -353,7 +353,7 @@ h1 img, .textblock-icon {
 }
 H2 {
   font: normal 2.5em/1.2 "Ringside Narrow A", "Ringside Narrow B";
-  margin: 1.66em 0 1em 0;
+  margin: 1.5em 0 1.5em;
   color: #000;
   font-weight: 700;
 }
@@ -377,7 +377,7 @@ H3 {
 
 ul {
   padding-left: 2em;
-  margin-bottom: 2em;
+  margin-bottom: 4em;
 }
 
 ul li {
@@ -389,7 +389,7 @@ ul.inlined {
 }
 ul.inlined li {
   list-style: none;
-  margin-bottom: .25em;
+  margin-bottom: .33em;
 
 }
 
@@ -397,7 +397,7 @@ ul.inlined li {
   font-family: "OperatorMono-Book";
   font-size: .8em;
   background-color: #e8e4e4;
-  padding: 0 .25em;
+  padding: 0 .25em .125em;
   border-radius: .2em;
   line-height: 1.5;
 }
@@ -405,6 +405,10 @@ ul.inlined li {
 span.code {
   display: block;
   padding: .66em;
+}
+
+.italic {
+  font-style: italic;
 }
 
 .sample p {
@@ -498,7 +502,8 @@ a:link, a:visited, a:hover, a:active {
   margin: 2em 1em 0 1em;
   font-size: 1.5em;
   line-height: 1.5;
-  color: rgba(0, 0, 0, 0.33);
+  /* color: rgba(0, 0, 0, 0.33); */
+  color:#999893;
   /*margin-bottom: 4em;*/
   font-family: "adobe-caslon-pro";
   font-style: normal;
@@ -522,7 +527,8 @@ a:link, a:visited, a:hover, a:active {
   margin: 0 1em;
   font-size: 1.5em;
   line-height: 1.5;
-  color: rgba(0, 0, 0, 0.33);
+  /* color: rgba(0, 0, 0, 0.33); */
+  color:#999893;
   margin-bottom: 4em;
   font-family: "adobe-caslon-pro";
   font-style: normal;
@@ -546,7 +552,8 @@ a:link, a:visited, a:hover, a:active {
   font-family: "adobe-caslon-pro";
   font-style: normal;
   font-weight: 400;
-  color: rgba(0, 0, 0, 0.33);
+  /* color: rgba(0, 0, 0, 0.33); */
+  color:#999893;
   text-decoration: underline;
 }
 
