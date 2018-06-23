@@ -77,8 +77,8 @@
       target:".emph",
       minWidth:194,
       maxWidth:525,
-      minFontSize:1.8,
-      maxFontSize:2.4,
+      minFontSize:1.85,
+      maxFontSize:2.45,
       minLineHeight:1.27,
       maxLineHeight:1.25
       },{
@@ -236,7 +236,7 @@
   }
   p.npmlink a {
     font-family: "OperatorMono-Book";
-    color: #b2b1aa;
+    color: #999893;
     font-size: 16px;
   }
   .underline {
@@ -472,7 +472,7 @@
 
       </div>
       <div class="grid__item flagmrgn"></div>
-      <div class="grid__item--6 editor"><img itemprop="image" src="i/editor.png"></div>
+      <div class="grid__item--6 editor"><img itemprop="image" src="i/tb-editor.png"></div>
       <div class="grid__item editormargin"></div>
     </div>
 
@@ -523,44 +523,44 @@
 
       <p><span class="code block">
         Textblock([{<br>
-          &emsp;target:".some<span class="lowdash">-</span>element"<br>
+          &emsp;target: <span class="italic">".some<span class="lowdash">-</span>element"</span><br>
         }]);
       </span></p>
 
       <h2>Optional Parameters</h2>
 
       <ul class="inlined">
-        <li><span class="inline-code"><b>target</b></span>: The element that should be resized <span class="inline-code">".your<span class="lowdash">&#8209;</span>class"</span>, <span class="inline-code">"#cool<span class="lowdash">-</span>id&nbsp;p"</span> (<i>required</i>&#8202;&#8202;)</li>
-        <li><span class="inline-code"><b>minWidth</b></span>: default <span class="inline-code">280</span></li>
-        <li><span class="inline-code"><b>maxWidth</b></span>: default <span class="inline-code">800</span></li>
-        <li><span class="inline-code"><b>minFontSize</b></span>: default <span class="inline-code">1.9</span></li>
-        <li><span class="inline-code"><b>maxFontSize</b></span>: default <span class="inline-code">2.6</span></li>
-        <li><span class="inline-code"><b>minLineHeight</b></span>: default <span class="inline-code">1.33</span></li>
-        <li><span class="inline-code"><b>maxLineHeight</b></span>: default <span class="inline-code">1.25</span></li>
-        <li><span class="inline-code"><b>container</b></span>: The container width to measure. Defaults to <span class="inline-code">"parent"</span> and can alternately be set to <span class="inline-code">"self"</span>.</li>
-        <li><span class="inline-code"><b>units</b></span>: default <span class="inline-code">"em"</span></li>
-        <li><span class="inline-code"><b>minVariableGrade</b></span>: A variable font weight for the small size, for example <span class="inline-code">450</span></li>
-        <li><span class="inline-code"><b>maxVariableGrade</b></span>: A variable font weight for the large size, i.e. <span class="inline-code">400</span></li>
+        <li><span class="inline-code"><b>target</b></span>: The element that should be resized <span class="inline-code italic">".your<span class="lowdash">&#8209;</span>class"</span>, <span class="inline-code italic">"#cool<span class="lowdash">-</span>id&nbsp;p"</span> (<i>required</i>&#8202;&#8202;)</li>
+        <li><span class="inline-code"><b>minWidth</b></span>: default <span class="inline-code italic">280</span></li>
+        <li><span class="inline-code"><b>maxWidth</b></span>: default <span class="inline-code italic">800</span></li>
+        <li><span class="inline-code"><b>minFontSize</b></span>: default <span class="inline-code italic">1.9</span></li>
+        <li><span class="inline-code"><b>maxFontSize</b></span>: default <span class="inline-code italic">2.6</span></li>
+        <li><span class="inline-code"><b>minLineHeight</b></span>: default <span class="inline-code italic">1.33</span></li>
+        <li><span class="inline-code"><b>maxLineHeight</b></span>: default <span class="inline-code italic">1.25</span></li>
+        <li><span class="inline-code"><b>container</b></span>: The container width to measure. Defaults to <span class="inline-code italic">"parent"</span> and can alternately be set to <span class="inline-code italic">"self"</span>.</li>
+        <li><span class="inline-code"><b>units</b></span>: default <span class="inline-code italic">"em"</span></li>
+        <li><span class="inline-code"><b>minVariableGrade</b></span>: A variable font weight for the small size, for example&nbsp;<span class="inline-code italic">450</span></li>
+        <li><span class="inline-code"><b>maxVariableGrade</b></span>: A variable font weight for the large size, i.e.&nbsp;<span class="inline-code italic">400</span></li>
       </ul>
 
 
-      <p>For easy math, you can set the root em to 10px so that subsequent em units are base 10 (i.e. 2.4em = 24px). But any number will do because once you start adjusting the min<span class="lowslash">/</span>max numbers, the experience is more visual than calculating. But if you prefer a more scientific approach, textblock gives you absolute control for setting systems such as with modular scales, output in floating points.</p>
+      <p>For easy math, you can set the root em to <span class="inline-code italic">10px</span> so that subsequent em units are base 10 (i.e. <span class="inline-code italic">2.4em</span> = <span class="inline-code italic">24px</span>). But any number will do because once you start adjusting the min<span class="lowslash">/</span>max numbers, the experience is more visual than calculating. But if you prefer a more scientific approach, textblock gives you absolute control for setting systems such as with modular scales, output in floating points.</p>
 
-      <p>If you’re using variable fonts, the min/maxVariableGrade parameters provide a way to simulate grades — micro-variations in weight to set smaller sizes slightly bolder.</p>
+      <p>If you’re using variable fonts, the min<span class="lowslash">/</span>max VariableGrade parameters provide a way to simulate grades <span class="lowdash">–</span> micro<span class="lowdash">-</span>variations in weight to set smaller sizes slightly bolder.</p>
 
       <h2>Example Including Extra Parameters</h2>
 
       <p><span class="code block">
         Textblock([{<br>
-          &emsp;target:".some<span class="lowdash">-</span>class",<br>
+          &emsp;target: <span class="italic">".some<span class="lowdash">-</span>class",</span><br>
           &emsp;minWidth: 280,<br>
           &emsp;maxWidth: 800,<br>
           &emsp;minFontSize: 1.9,<br>
           &emsp;maxFontSize: 2.6,<br>
           &emsp;minLineHeight: 1.33,<br>
           &emsp;maxLineHeight: 1.25,<br>
-          &emsp;container: "self",<br>
-          &emsp;units: "rem"<br>
+          &emsp;container: <span class="italic">"self",</span><br>
+          &emsp;units: <span class="italic">"rem",</span><br>
           &emsp;minVariableGrade: 366,<br>
           &emsp;maxVariableGrade: 300<br>
         }]);
@@ -571,15 +571,15 @@
       <p><span class="code block">
         Textblock([<br>
           &emsp;{<br>
-            &emsp;&emsp;target:".some<span class="lowdash">-</span>class",<br>
+            &emsp;&emsp;target: <span class="italic">".some<span class="lowdash">-</span>class",</span><br>
             &emsp;&emsp;minFontSize: 1.9,<br>
             &emsp;&emsp;maxFontSize: 2.6<br>
           &emsp;},<br>
           &emsp;{<br>
-            &emsp;&emsp;target:".another",<br>
+            &emsp;&emsp;target: <span class="italic">".another-class",</span><br>
             &emsp;&emsp;minFontSize: 2.4,<br>
             &emsp;&emsp;maxFontSize: 3.6,<br>
-            &emsp;&emsp;container: "self",<br>
+            &emsp;&emsp;container: <span class="italic">"self",</span><br>
             &emsp;&emsp;minVariableGrade: 450,<br>
             &emsp;&emsp;maxVariableGrade: 400<br>
           &emsp;}<br>
@@ -679,7 +679,7 @@
 
       <div class="grid__item samptxt order">
         <h3 class="smplh3">Sign up for Email Updates</h3>
-        <p class="smpltxt">Get news on textblock and other things. Your info will be safe and we’ll never spam you.<br>&nbsp;</p>
+        <p class="smpltxt">Get type news from Glyphic. Your info will be safe and we’ll never spam.</p>
 
         <div class="chimpform" style="margin-top:0;"><!-- Begin MailChimp Signup Form -->
 
@@ -804,7 +804,7 @@
     </div>
 
     <div class="grid__item">
-        <div class="grid__item webcolophon version">www v0.9.21<br>
+        <div class="grid__item webcolophon version">www v0.10.0<br>
           &nbsp;
         </div>
     </div>
