@@ -527,10 +527,10 @@
         }]);
       </span></p>
 
-      <h2>Optional Parameters</h2>
+      <h2>Parameters</h2>
 
       <ul class="inlined">
-        <li><span class="inline-code"><b>target</b></span>: The element that should be resized <span class="inline-code italic">".your<span class="lowdash">&#8209;</span>class"</span>, <span class="inline-code italic">"#cool<span class="lowdash">-</span>id&nbsp;p"</span> (<i>required</i>&#8202;&#8202;)</li>
+        <li><span class="inline-code"><b>target</b></span> (<i>required</i>&#8202;&#8202;): The element that should be resized <span class="inline-code italic">".your<span class="lowdash">&#8209;</span>class"</span>, <span class="inline-code italic">"#some<span class="lowdash">-</span>id&nbsp;p"</span></li>
         <li><span class="inline-code"><b>minWidth</b></span>: default <span class="inline-code italic">280</span></li>
         <li><span class="inline-code"><b>maxWidth</b></span>: default <span class="inline-code italic">800</span></li>
         <li><span class="inline-code"><b>minFontSize</b></span>: default <span class="inline-code italic">1.9</span></li>
@@ -544,9 +544,9 @@
       </ul>
 
 
-      <p>For easy math, you can set the root em to <span class="inline-code italic">10px</span> so that subsequent em units are base 10 (i.e. <span class="inline-code italic">2.4em</span> = <span class="inline-code italic">24px</span>). But any number will do because once you start adjusting the min<span class="lowslash">/</span>max numbers, the experience is more visual than calculating. But if you prefer a more scientific approach, textblock gives you absolute control for setting systems such as with modular scales, output in floating points.</p>
+      <p>For easy math, you can set your page’s root em to <span class="inline-code italic">10px</span> so that subsequent em units are base 10 (i.e. <span class="inline-code italic">2.4em</span> = <span class="inline-code italic">24px</span>). But any number will do because once you start adjusting the min<span class="lowslash">/</span>max numbers, the experience is more visual than calculated. But if you prefer a more scientific approach, textblock gives you absolute control for setting systems such as with modular scales, output in floating points.</p>
 
-      <p>If you’re using variable fonts, the min<span class="lowslash">/</span>max VariableGrade parameters provide a way to simulate grades <span class="lowdash">–</span> micro<span class="lowdash">-</span>variations in weight to set smaller sizes slightly bolder.</p>
+      <p>If you’re using variable fonts, the <span class="inline-code italic">minVariableGrade</span> <span class="lowslash">/</span> <span class="inline-code italic">maxVariableGrade</span> parameters provide a way to simulate grades: micro<span class="lowdash">-</span>variations in weight to set smaller sizes slightly bolder.</p>
 
       <h2>Example Including Extra Parameters</h2>
 
@@ -804,7 +804,7 @@
     </div>
 
     <div class="grid__item">
-        <div class="grid__item webcolophon version">www v0.10.0<br>
+        <div class="grid__item webcolophon version">www v0.10.1<br>
           &nbsp;
         </div>
     </div>
