@@ -6,9 +6,15 @@
 }
 body {
   font-family: 'SourceSans';
+  margin: 2em;
+}
+body > div {
+  max-width: 1024px;
+  margin: auto;
 }
 #jupiter {
-  padding: 100px;
-  border: 10px solid #f00;
+  padding: 4em;
+  border: .5em solid #FF3B00;
+  margin-top: 2em;
 }
 p {font-size: inherit;}
