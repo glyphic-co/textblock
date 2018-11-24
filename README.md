@@ -20,14 +20,14 @@ Textblock([{
 ## Parameters
 
 - **target** (required  ): The element that should be resized `".your‑class"`, `"#some-id p"`
-- `minWidth`: default `320`
-- `maxWidth`: default `960`
-- `minFontSize`: default `1.0`
-- `maxFontSize`: default `1.8`
-- `minLineHeight`: default `1.33`
-- `maxLineHeight`: default `1.25`
+- **`minWidth`**: default `320`
+- **`maxWidth`**: default `960`
+- **`minFontSize`**: default `1.0`
+- **`maxFontSize`**: default `1.8`
+- **`minLineHeight`**: default `1.33`
+- **`maxLineHeight`**: default `1.25`
 - **container**: The container width to measure. Defaults to `"parent"` and can alternately be set to `"self"`.
-- `units`: default `em`
+- **`units`**: default `em`
 - **minVariableGrade**: A variable font weight for the small size, for example `450`
 - **maxVariableGrade**: A variable font weight for the large size, i.e. `400`
 
