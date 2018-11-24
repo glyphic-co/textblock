@@ -64,10 +64,10 @@ var Textblock = function(textblocks) {
   }
   function prepBlockSettings(block){
     var defaultSettings = {
-      minWidth: 280,
-      maxWidth: 800,
-      minFontSize: 1.8,
-      maxFontSize: 2.4,
+      minWidth: 320,
+      maxWidth: 960,
+      minFontSize: 1.0,
+      maxFontSize: 1.8,
       minLineHeight: 1.33,
       maxLineHeight: 1.25,
       container: 'parent',
