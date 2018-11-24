@@ -19,17 +19,17 @@ Textblock([{
 
 ## Parameters
 
-- **target** (required  ): The element that should be resized `".your‑class"`, `"#some-id p"`
+- **`target`** (required  ): The element that should be resized `".your‑class"`, `"#some-id p"`
 - **`minWidth`**: default `320`
 - **`maxWidth`**: default `960`
 - **`minFontSize`**: default `1.0`
 - **`maxFontSize`**: default `1.8`
 - **`minLineHeight`**: default `1.33`
 - **`maxLineHeight`**: default `1.25`
-- **container**: The container width to measure. Defaults to `"parent"` and can alternately be set to `"self"`.
+- **`container`**: The container width to measure. Defaults to `"parent"` and can alternately be set to `"self"`.
 - **`units`**: default `em`
-- **minVariableGrade**: A variable font weight for the small size, for example `450`
-- **maxVariableGrade**: A variable font weight for the large size, i.e. `400`
+- **`minVariableGrade`**: A variable font weight for the small size, for example `450`
+- **`maxVariableGrade`**: A variable font weight for the large size, i.e. `400`
 
 For a better sense of context, set your root em to `10px` with `html { font-size: 62.5%; }`. This makes your em units base 10 so `2.4em` = `24px`. But any number will do because once you start adjusting the min/max numbers, the experience is more visual than calculated. And if you prefer a more scientific approach, Textblock gives you the control you need for setting systems like modular scales.
 
