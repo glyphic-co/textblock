@@ -9,7 +9,7 @@ The script calculates your setting based on minimum and maximum values for font 
 - minimum/maximum container width
 - minimum/maximum grades (variable fonts only)
 
-### To initialize, add the element to be resized (required)
+## To initialize, add the element to be resized (required)
 
 ```
 Textblock([{
@@ -17,7 +17,8 @@ Textblock([{
 }]);
 ```
 
-### Parameters
+## Parameters
+
 - **target** (required  ): The element that should be resized `".your‑class"`, `"#some-id p"`
 - `minWidth`: default `320`
 - `maxWidth`: default `960`
@@ -34,7 +35,7 @@ For a better sense of context, set your root em to `10px` with `html { font-size
 
 If you’re using variable fonts, the `minVariableGrade` / `maxVariableGrade` parameters provide a way to simulate grades (micro-variations in weight to set smaller sizes slightly bolder).
 
-### Example Including Extra Parameters
+## Example Including Extra Parameters
 
 ```
 Textblock([{
@@ -52,7 +53,7 @@ Textblock([{
 }]);
 ```
 
-### Multiple Elements with Different Settings
+## Multiple Elements with Different Settings
 
 ```
 Textblock([
