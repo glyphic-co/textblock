@@ -1,7 +1,7 @@
 {
   "name": "textblock",
   "version": "0.9.4",
-  "description": "Textblock adjusts size, leading, and grades to set continuously responsive type. It works over your current CSS as a progressive enhancement.",
+  "description": "Textblock adjusts size, leading, and grades to cast continuously responsive typography. It works over your current CSS as a progressive enhancement.",
   "main": "textblock.min.js",
   "license": "UNLICENSED",
   "README": "README.md",

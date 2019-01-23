@@ -1,6 +1,6 @@
 # Textblock
 
-Textblock adjusts size, leading, and grades to cast continuously responsive type. It works over your current CSS as a progressive enhancement.
+Textblock adjusts size, leading, and grades to cast continuously responsive typography. It works over your current CSS as a progressive enhancement.
 
 The script calculates your setting based on minimum and maximum values for font size, line height, variable grades, and container width:
 
