@@ -11,14 +11,14 @@ module.exports = function(grunt) {
       },
       textblock: {
         files: {
-          'build/textblock.min.js': ['src/textblock.js']
+          'textblock.min.js': ['src/textblock.js']
         }
       }
     },
 
     watch:{
       scripts: {
-        files:['src/demo.html', 'src/demo.css'],
+        files:['src/demo.html', 'src/demo.css', 'src/textblock.js'],
         tasks:['uglify:textblock'],
       }
     }
