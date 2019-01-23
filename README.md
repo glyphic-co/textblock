@@ -1,4 +1,4 @@
-# Textblock.js
+# Textblock
 
 Textblock adjusts size, leading, and grades to cast continuously responsive type. It works over your current CSS as a progressive enhancement.
 
