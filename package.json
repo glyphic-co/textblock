@@ -3,7 +3,7 @@
   "version": "0.9.7",
   "description": "A javascript tool for adjusting size, leading, and grades to cast continuously responsive typography.",
   "main": "textblock.min.js",
-  "license": "UNLICENSED",
+  "license": "MIT",
   "README": "README.md",
   "repository": "https://github.com/glyphic-co/textblock",
   "devDependencies": {
