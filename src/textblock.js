@@ -26,13 +26,15 @@ window.Textblock = function(textblocks) {
     if (el) {
       var tb_minw = block.minWidth;
       var tb_maxw = block.maxWidth;
-      var tb_minf = block.minWidthFontSize;
-      var tb_maxf = block.maxWidthFontSize;
-      var tb_minl = block.minWidthLineHeight;
-      var tb_maxl = block.maxWidthLineHeight;
       var tb_cont = block.container;
-      var tb_ming = block.minWidthVariableGrade;
-      var tb_maxg = block.maxWidthVariableGrade;
+
+      // use short-circuit assignment to allow legacy config var names to be used.
+      var tb_minf = block.minFontSize || block.minWidthFontSize;
+      var tb_maxf = block.maxFontSize || block.maxWidthFontSize;
+      var tb_minl = block.minLineHeight || block.minWidthLineHeight;
+      var tb_maxl = block.maxLineHeight || block.maxWidthLineHeight;
+      var tb_ming = block.minVariableGrade || block.minWidthVariableGrade;
+      var tb_maxg = block.maxVariableGrade || block.maxWidthVariableGrade;
 
       var msr_width = tb_cont === 'self' ? elWidth(el) : elWidth(el.parentNode);
 
