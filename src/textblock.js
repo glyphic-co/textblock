@@ -131,7 +131,6 @@ window.Textblock = function(textblocks) {
   }
   function elWidth(el) {
     // calculates width, without padding and border width
-    var width = el.offsetWidth;
     var paddingWidth =
       parseInt(elStyleVal(el, 'padding-left')) +
       parseInt(elStyleVal(el, 'padding-right'));
