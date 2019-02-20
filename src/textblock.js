@@ -1,4 +1,4 @@
-var Textblock = function(textblocks) {
+window.Textblock = function(textblocks) {
   onDocReady(function() {
     run();
     onResize(run);
