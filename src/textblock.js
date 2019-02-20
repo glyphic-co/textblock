@@ -34,13 +34,7 @@ window.Textblock = function(textblocks) {
       var tb_ming = block.minVariableGrade;
       var tb_maxg = block.maxVariableGrade;
 
-      switch (tb_cont) {
-        case 'self':
-          var msr_width = elWidth(el);
-          break;
-        default:
-          var msr_width = elWidth(el.parentNode);
-      }
+      var msr_width = tb_cont === 'self' ? elWidth(el) : elWidth(el.parentNode);
 
       var minld = tb_minw / tb_minl;
       var maxld = tb_maxw / tb_maxl;
