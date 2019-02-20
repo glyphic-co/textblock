@@ -26,13 +26,13 @@ window.Textblock = function(textblocks) {
     if (el) {
       var tb_minw = block.minWidth;
       var tb_maxw = block.maxWidth;
-      var tb_minf = block.minFontSize;
-      var tb_maxf = block.maxFontSize;
-      var tb_minl = block.minLineHeight;
-      var tb_maxl = block.maxLineHeight;
+      var tb_minf = block.minWidthFontSize;
+      var tb_maxf = block.maxWidthFontSize;
+      var tb_minl = block.minWidthLineHeight;
+      var tb_maxl = block.maxWidthLineHeight;
       var tb_cont = block.container;
-      var tb_ming = block.minVariableGrade;
-      var tb_maxg = block.maxVariableGrade;
+      var tb_ming = block.minWidthVariableGrade;
+      var tb_maxg = block.maxWidthVariableGrade;
 
       var msr_width = tb_cont === 'self' ? elWidth(el) : elWidth(el.parentNode);
 
@@ -65,10 +65,10 @@ window.Textblock = function(textblocks) {
     var defaultSettings = {
       minWidth: 320,
       maxWidth: 960,
-      minFontSize: 1.0,
-      maxFontSize: 1.8,
-      minLineHeight: 1.33,
-      maxLineHeight: 1.25,
+      minWidthFontSize: 1.0,
+      maxWidthFontSize: 1.8,
+      minWidthLineHeight: 1.33,
+      maxWidthLineHeight: 1.25,
       container: 'parent',
       units: 'em'
     };
