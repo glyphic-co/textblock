@@ -36,23 +36,25 @@ window.Textblock = function(textblocks) {
       var tb_ming = block.minVariableGrade || block.minWidthVariableGrade;
       var tb_maxg = block.maxVariableGrade || block.maxWidthVariableGrade;
 
-      var msr_width = tb_cont === 'self' ? elWidth(el) : elWidth(el.parentNode);
+      var current_width =
+        tb_cont === 'self' ? elWidth(el) : elWidth(el.parentNode);
 
       var minld = tb_minw / tb_minl;
       var maxld = tb_maxw / tb_maxl;
 
       var fontsizevariation =
         tb_minf +
-        ((tb_maxf - tb_minf) / (tb_maxw - tb_minw)) * (msr_width - tb_minw);
+        ((tb_maxf - tb_minf) / (tb_maxw - tb_minw)) * (current_width - tb_minw);
       var calctypesize = fontsizevariation;
 
       var leadingvariation =
-        minld + ((maxld - minld) / (tb_maxw - tb_minw)) * (msr_width - tb_minw);
-      var calcleading = msr_width / leadingvariation;
+        minld +
+        ((maxld - minld) / (tb_maxw - tb_minw)) * (current_width - tb_minw);
+      var calcleading = current_width / leadingvariation;
 
       var gradevariation =
         tb_ming +
-        ((tb_maxg - tb_ming) / (tb_maxw - tb_minw)) * (msr_width - tb_minw);
+        ((tb_maxg - tb_ming) / (tb_maxw - tb_minw)) * (current_width - tb_minw);
       var gradeMath = Math.max(Math.min(gradevariation, tb_ming), tb_maxg);
       var variableGradeSettings = '"wght" ' + gradeMath;
 
