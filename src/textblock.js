@@ -50,11 +50,6 @@ window.Textblock = function(textblocks) {
       var minld = tb_minw / tb_minl;
       var maxld = tb_maxw / tb_maxl;
 
-      var fontsizevariation =
-        tb_minf +
-        ((tb_maxf - tb_minf) / (tb_maxw - tb_minw)) * (current_width - tb_minw);
-      var calctypesize = fontsizevariation;
-
       var leadingvariation =
         minld +
         ((maxld - minld) / (tb_maxw - tb_minw)) * (current_width - tb_minw);
@@ -67,7 +62,7 @@ window.Textblock = function(textblocks) {
       var variableGradeSettings = '"wght" ' + gradeMath;
 
       return {
-        fontSize: Math.min(Math.max(calctypesize, tb_minf), tb_maxf),
+        fontSize: tb_minf + (tb_maxf - tb_minf) * linear_scale_factor,
         lineHeight: Math.max(Math.min(calcleading, tb_minl), tb_maxl),
         fontVariationSettings: variableGradeSettings
       };
