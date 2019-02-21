@@ -13,7 +13,7 @@ The script calculates your setting based on minimum and maximum values for font 
 
 ```
 Textblock([{
-  target:".some-element"
+  target: ".some-element"
 }]);
 ```
 
