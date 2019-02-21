@@ -39,6 +39,14 @@ window.Textblock = function(textblocks) {
       var current_width =
         tb_cont === 'self' ? elWidth(el) : elWidth(el.parentNode);
 
+      var current_width_capped = Math.min(
+        Math.max(current_width, tb_minw),
+        tb_maxw
+      ); // cap current container width to minWidth and maxWidth settings
+
+      var linear_scale_factor =
+        (current_width_capped - tb_minw) / (tb_maxw - tb_minw);
+
       var minld = tb_minw / tb_minl;
       var maxld = tb_maxw / tb_maxl;
 
