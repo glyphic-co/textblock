@@ -47,17 +47,9 @@ window.Textblock = function(textblocks) {
       var linear_scale_factor =
         (current_width_capped - tb_minw) / (tb_maxw - tb_minw);
 
-      var minld = tb_minw / tb_minl;
-      var maxld = tb_maxw / tb_maxl;
-
-      var leadingvariation =
-        minld +
-        ((maxld - minld) / (tb_maxw - tb_minw)) * (current_width - tb_minw);
-      var calcleading = current_width / leadingvariation;
-
       return {
         fontSize: tb_minf + (tb_maxf - tb_minf) * linear_scale_factor,
-        lineHeight: Math.max(Math.min(calcleading, tb_minl), tb_maxl),
+        lineHeight: tb_minl + (tb_maxl - tb_minl) * linear_scale_factor,
         fontVariationSettings:
           '"wght" ' + (tb_ming + (tb_maxg - tb_ming) * linear_scale_factor)
       };
