@@ -55,16 +55,11 @@ window.Textblock = function(textblocks) {
         ((maxld - minld) / (tb_maxw - tb_minw)) * (current_width - tb_minw);
       var calcleading = current_width / leadingvariation;
 
-      var gradevariation =
-        tb_ming +
-        ((tb_maxg - tb_ming) / (tb_maxw - tb_minw)) * (current_width - tb_minw);
-      var gradeMath = Math.max(Math.min(gradevariation, tb_ming), tb_maxg);
-      var variableGradeSettings = '"wght" ' + gradeMath;
-
       return {
         fontSize: tb_minf + (tb_maxf - tb_minf) * linear_scale_factor,
         lineHeight: Math.max(Math.min(calcleading, tb_minl), tb_maxl),
-        fontVariationSettings: variableGradeSettings
+        fontVariationSettings:
+          '"wght" ' + (tb_ming + (tb_maxg - tb_ming) * linear_scale_factor)
       };
     }
   }
