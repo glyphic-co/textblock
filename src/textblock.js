@@ -44,16 +44,18 @@ window.Textblock = function(textblocks) {
         tb_maxw
       ); // cap current container width to minWidth and maxWidth settings
 
-      var linear_scale_factor =
-        (current_width_capped - tb_minw) / (tb_maxw - tb_minw);
+      var width_ratio = (current_width_capped - tb_minw) / (tb_maxw - tb_minw);
 
       return {
-        fontSize: tb_minf + (tb_maxf - tb_minf) * linear_scale_factor,
-        lineHeight: tb_minl + (tb_maxl - tb_minl) * linear_scale_factor,
+        fontSize: scaleInRange(tb_minf, tb_maxf, width_ratio),
+        lineHeight: scaleInRange(tb_minl, tb_maxl, width_ratio),
         fontVariationSettings:
-          '"wght" ' + (tb_ming + (tb_maxg - tb_ming) * linear_scale_factor)
+          '"wght" ' + scaleInRange(tb_ming, tb_maxg, width_ratio)
       };
     }
+  }
+  function scaleInRange(min, max, scale_factor) {
+    return min + (max - min) * scale_factor;
   }
   function prepBlockSettings(block) {
     var defaultSettings = {
