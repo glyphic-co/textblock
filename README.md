@@ -1,13 +1,13 @@
 # Textblock
 
-A javascript tool for adjusting size, leading, and grades to cast continuously responsive typography. It works over your current CSS as a progressive enhancement.
+A javascript tool for adjusting size, leading, and weight to cast continuously responsive typography. It works over your current CSS as a progressive enhancement.
 
-The script calculates your setting based on minimum and maximum values for font size, line height, variable grades, and container width:
+The script calculates your setting based on minimum and maximum values for font size, line height, font weight, and container width:
 
 - minimum/maximum font size
 - minimum/maximum line height
 - minimum/maximum container width
-- minimum/maximum grades (variable fonts only)
+- minimum/maximum font weight (intended for variable fonts)
 
 ## To initialize, add the element to be resized (required)
 
@@ -26,8 +26,8 @@ Textblock([{
 - **`maxWidthFontSize`**: default `1.8`
 - **`minWidthLineHeight`**: default `1.33` (unitless values only)
 - **`maxWidthLineHeight`**: default `1.25` (unitless values only)
-- **`minWidthFontWeight`**: A variable font weight for the small size, for example `450`
-- **`maxWidthFontWeight`**: A variable font weight for the large size, i.e. `400`
+- **`minWidthFontWeight`**: e.g. `450` (undefined by default)
+- **`maxWidthFontWeight`**: e.g. `400` (undefined by default)
 - **`container`**: The container width to measure. Defaults to `"parent"` and can alternately be set to `"self"`.
 - **`units`**: default `em`
 

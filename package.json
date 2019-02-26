@@ -1,7 +1,7 @@
 {
   "name": "textblock",
   "version": "0.10.0",
-  "description": "A javascript tool for adjusting size, leading, and grades to cast continuously responsive typography.",
+  "description": "A javascript tool for adjusting size, leading, and weights to cast continuously responsive typography.",
   "main": "textblock.min.js",
   "license": "MIT",
   "README": "README.md",
