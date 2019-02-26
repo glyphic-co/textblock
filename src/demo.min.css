@@ -3,6 +3,7 @@
 @font-face {
   font-family: 'SourceSans';
   src: url('SourceSansVariable-Roman.ttf')  format('truetype');
+  font-weight: 200 900; /* must be specified for `font-variation-settings` to override `font-weight` irrespective of cascade in Chrome and Safari (not Firefox) */
 }
 body {
   font-family: 'SourceSans';
