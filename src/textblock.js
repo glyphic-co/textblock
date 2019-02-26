@@ -16,7 +16,7 @@ window.Textblock = function(textblocks) {
         if (measurements) {
           el.style.fontSize = measurements.fontSize + block.units;
           el.style.lineHeight = measurements.lineHeight;
-          el.style.fontVariationSettings = measurements.fontVariationSettings;
+          el.style.fontWeight = measurements.fontWeight;
         }
       });
     });
@@ -49,8 +49,7 @@ window.Textblock = function(textblocks) {
       return {
         fontSize: scaleInRange(tb_minf, tb_maxf, width_ratio),
         lineHeight: scaleInRange(tb_minl, tb_maxl, width_ratio),
-        fontVariationSettings:
-          '"wght" ' + scaleInRange(tb_ming, tb_maxg, width_ratio)
+        fontWeight: scaleInRange(tb_ming, tb_maxg, width_ratio)
       };
     }
   }
