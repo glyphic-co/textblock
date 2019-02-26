@@ -33,8 +33,8 @@ window.Textblock = function(textblocks) {
       var tb_maxf = block.maxFontSize || block.maxWidthFontSize;
       var tb_minl = block.minLineHeight || block.minWidthLineHeight;
       var tb_maxl = block.maxLineHeight || block.maxWidthLineHeight;
-      var tb_ming = block.minVariableGrade || block.minWidthVariableGrade;
-      var tb_maxg = block.maxVariableGrade || block.maxWidthVariableGrade;
+      var tb_ming = block.minVariableGrade || block.minWidthFontWeight;
+      var tb_maxg = block.maxVariableGrade || block.maxWidthFontWeight;
 
       var current_width =
         tb_cont === 'self' ? elWidth(el) : elWidth(el.parentNode);
