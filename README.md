@@ -7,7 +7,7 @@ The script calculates your setting based on minimum and maximum values for font 
 - minimum/maximum font size
 - minimum/maximum line height
 - minimum/maximum container width
-- minimum/maximum font weight (intended for variable fonts)
+- minimum/maximum font weight (intended for use with variable fonts to simulate grades — micro-variations in weight to set smaller sizes slightly bolder)
 
 ## To initialize, add the element to be resized (required)
 
@@ -32,8 +32,6 @@ Textblock([{
 - **`units`**: default `em`
 
 For a better sense of context, set your root em to `10px` with `html { font-size: 62.5%; }`. This makes your em units base 10 so `2.4em` = `24px`. But any number will do because once you start adjusting the min/max numbers, the experience is more visual than calculated. And if you prefer a more scientific approach, Textblock gives you the control you need for setting systems like modular scales.
-
-If you’re using variable fonts, the `minWidthFontWeight` / `maxWidthFontWeight` parameters provide a way to simulate grades (micro-variations in weight to set smaller sizes slightly bolder).
 
 ## Example Including Extra Parameters
 
