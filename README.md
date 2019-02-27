@@ -10,7 +10,7 @@ Based on your settings for the minimum and maximum widths of a flexible containe
 
 ## To initialize, add the element to be resized (required)
 
-```
+```js
 Textblock([{
   target: ".some-element"
 }]);
@@ -34,7 +34,7 @@ For a better sense of context, set your root em to `10px` with `html { font-size
 
 ## Example Including Extra Parameters
 
-```
+```js
 Textblock([{
  target: ".some-class",
  minWidth: 280,
@@ -52,7 +52,7 @@ Textblock([{
 
 ## Multiple Elements with Different Settings
 
-```
+```js
 Textblock([
  {
   target: ".some-class",
