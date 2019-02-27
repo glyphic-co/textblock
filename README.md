@@ -2,12 +2,11 @@
 
 A javascript tool for adjusting size, leading, and weight to cast continuously responsive typography. It works over your current CSS as a progressive enhancement.
 
-The script calculates your setting based on minimum and maximum values for font size, line height, font weight, and container width:
+Based on your settings for the minimum and maximum widths of a flexible container, the script interpolates settings at the container's current width for:
 
-- minimum/maximum font size
-- minimum/maximum line height
-- minimum/maximum container width
-- minimum/maximum font weight (intended for use with variable fonts to simulate grades — micro-variations in weight to set smaller sizes slightly bolder)
+- **font size**
+- **font weight** (intended for use with variable fonts to simulate grades — micro-variations in weight to set smaller sizes slightly bolder)
+- **line height**
 
 ## To initialize, add the element to be resized (required)
 
