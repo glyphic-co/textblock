@@ -24,8 +24,8 @@ Textblock([{
 - **`maxWidth`**: default `960`
 - **`minWidthFontSize`**: default `1.0`
 - **`maxWidthFontSize`**: default `1.8`
-- **`minWidthLineHeight`**: default `1.33`
-- **`maxWidthLineHeight`**: default `1.25`
+- **`minWidthLineHeight`**: default `1.33` (unitless values only)
+- **`maxWidthLineHeight`**: default `1.25` (unitless values only)
 - **`minWidthVariableGrade`**: A variable font weight for the small size, for example `450`
 - **`maxWidthVariableGrade`**: A variable font weight for the large size, i.e. `400`
 - **`container`**: The container width to measure. Defaults to `"parent"` and can alternately be set to `"self"`.
