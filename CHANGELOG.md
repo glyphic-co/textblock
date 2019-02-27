@@ -16,6 +16,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 ### Added
+- Ability for min/max values to be transposed
 - ESLint and Prettier
 - Width-dependent param prefixes
 ### Changed
