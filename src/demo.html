@@ -13,27 +13,68 @@
   <script>
     Textblock([
       {
-        target:"#jupiter",
-        minFontSize: 1.8,
-        maxFontSize: 2.4,
-        container: 'self',
-        minVariableGrade: 490,
-        maxVariableGrade: 400
-      },
-      {
-        target:".saturn",
-        minFontSize: 18,
-        maxFontSize: 24,
+        target: ".saturn",
         minWidth: 400,
         maxWidth: 800,
-        minLineHeight: 1.33,
-        maxLineHeight: 1.2,
-        units: 'px'
+        minWidthFontSize: 18,
+        maxWidthFontSize: 24,
+        minWidthLineHeight: 1.33,
+        maxWidthLineHeight: 1.2,
+        units: "px"
+      },
+      {
+        target: "#jupiter",
+        minWidthFontSize: 1.8,
+        maxWidthFontSize: 2.4,
+        minWidthVariableGrade: 490,
+        maxWidthVariableGrade: 400,
+        container: "self"
+      },
+      {
+        target: ".mars",
+        minWidth: 400,
+        maxWidth: 800,
+        minWidthFontSize: 4,
+        maxWidthFontSize: 2,
+        minWidthLineHeight: 1,
+        maxWidthLineHeight: 2,
+        minWidthVariableGrade: 400,
+        maxWidthVariableGrade: 800
+      },
+      {
+        target: "#legacy-params",
+        minWidth: 400,
+        maxWidth: 800,
+        minFontSize: 1.8,
+        maxFontSize: 2.4,
+        minLineHeight: 2,
+        maxLineHeight: 1,
+        minVariableGrade: 490,
+        maxVariableGrade: 400
       }
     ]);
   </script>
 
-
+  <style>
+    #legacy-params {
+      margin-top: 2em;
+    }
+    #legacy-params table {
+      margin: .5em 0;
+      font-size: .875em;
+    }
+    #legacy-params code {
+      font-family: Courier, monospace;
+      font-size: .875em;
+    }
+    #legacy-params th,
+    #legacy-params td {
+      padding: .5em 2em .5em 0;
+    }
+    #legacy-params td {
+      border-top: 1px solid lightgray;
+    }
+  </style>
 </head>
 <body style="overflow:scroll;padding-top:4em;">
 
@@ -42,12 +83,54 @@
       <div class="saturn">
         <p>Textblock adjusts size, leading, and grades to cast continuously responsive type. It works over your current CSS as a progressive enhancement.</p>
       </div>
-    <div id="jupiter">
-      <p>With variable adjustment to weight — Textblock adjusts size, leading, and grades to cast continuously responsive type. It works over your current CSS as a progressive enhancement.</p>
-    </div>
+
+      <div id="jupiter">
+        <p>With variable adjustment to weight — Textblock adjusts size, leading, and grades to cast continuously responsive type. It works over your current CSS as a progressive enhancement.</p>
+      </div>
+
+      <div class="mars" style="margin-top: 2em;">
+        <p>With font-size inversely related to container width, and variable weight and line-height directly related — Textblock adjusts size, leading, and grades to cast continuously responsive type. It works over your current CSS as a progressive enhancement.</p>
+      </div>
+
+      <div id="legacy-params">
+        <p>With legacy parameter names — Textblock adjusts size, leading, and grades to cast continuously responsive type. It works over your current CSS as a progressive enhancement. Some parameter names have changed:</p>
+        <table>
+          <thead>
+            <tr>
+              <th>Old</th>
+              <th>New</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><code>minFontSize</code></td>
+              <td><code>minWidthFontSize</code></td>
+            </tr>
+            <tr>
+              <td><code>maxFontSize</code></td>
+              <td><code>maxWidthFontSize</code></td>
+            </tr>
+            <tr>
+              <td><code>minLineHeight</code></td>
+              <td><code>minWidthLineHeight</code></td>
+            </tr>
+            <tr>
+              <td><code>maxLineHeight</code></td>
+              <td><code>maxWidthLineHeight</code></td>
+            </tr>
+            <tr>
+              <td><code>minVariableGrade</code></td>
+              <td><code>minWidthVariableGrade</code></td>
+            </tr>
+            <tr>
+              <td><code>maxVariableGrade</code></td>
+              <td><code>maxWidthVariableGrade</code></td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
     </div>
   </div>
-
 
 </body>
 </html>

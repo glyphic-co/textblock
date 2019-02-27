@@ -1,6 +1,6 @@
 {
   "name": "textblock",
-  "version": "0.9.9",
+  "version": "0.10.0",
   "description": "A javascript tool for adjusting size, leading, and grades to cast continuously responsive typography.",
   "main": "textblock.min.js",
   "license": "MIT",
@@ -8,10 +8,14 @@
   "repository": "https://github.com/glyphic-co/textblock",
   "devDependencies": {
     "autoprefixer": "^6.7.7",
+    "eslint": "^5.14.1",
+    "eslint-config-prettier": "^4.0.0",
+    "eslint-plugin-prettier": "^3.0.1",
     "grunt": "^1.0.3",
     "grunt-contrib-nodeunit": "~0.4.1",
     "grunt-contrib-uglify": "^1.0.0",
     "grunt-contrib-watch": "^0.6.1",
-    "grunt-reload": "^0.2.0"
+    "grunt-reload": "^0.2.0",
+    "prettier": "^1.16.4"
   }
 }

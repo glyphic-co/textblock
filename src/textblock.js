@@ -1,15 +1,15 @@
-var Textblock = function(textblocks) {
-  onDocReady(function(){
+window.Textblock = function(textblocks) {
+  onDocReady(function() {
     run();
     onResize(run);
   });
-  function run(){
-    each(textblocks, function(rawBlock){
+  function run() {
+    each(textblocks, function(rawBlock) {
       // loop through all the provided textblocks
 
       var block = prepBlockSettings(rawBlock);
 
-      each(findEls(block.target), function(el){
+      each(findEls(block.target), function(el) {
         // loop through each element that matches the textblock's selector
 
         var measurements = calc(el, block);
@@ -18,7 +18,7 @@ var Textblock = function(textblocks) {
           el.style.lineHeight = measurements.lineHeight;
           el.style.fontVariationSettings = measurements.fontVariationSettings;
         }
-      })
+      });
     });
   }
   function calc(el, block) {
@@ -26,73 +26,69 @@ var Textblock = function(textblocks) {
     if (el) {
       var tb_minw = block.minWidth;
       var tb_maxw = block.maxWidth;
-      var tb_minf = block.minFontSize;
-      var tb_maxf = block.maxFontSize;
-      var tb_minl = block.minLineHeight;
-      var tb_maxl = block.maxLineHeight;
       var tb_cont = block.container;
-      var tb_ming = block.minVariableGrade;
-      var tb_maxg = block.maxVariableGrade;
 
-      switch(tb_cont) {
-        case 'self':
-          var msr_width = elWidth(el);
-          break;
-        default:
-          var msr_width = elWidth(el.parentNode);
-      }
+      // use short-circuit assignment to allow legacy config var names to be used.
+      var tb_minf = block.minFontSize || block.minWidthFontSize;
+      var tb_maxf = block.maxFontSize || block.maxWidthFontSize;
+      var tb_minl = block.minLineHeight || block.minWidthLineHeight;
+      var tb_maxl = block.maxLineHeight || block.maxWidthLineHeight;
+      var tb_ming = block.minVariableGrade || block.minWidthVariableGrade;
+      var tb_maxg = block.maxVariableGrade || block.maxWidthVariableGrade;
 
-      var minld   = tb_minw / tb_minl;
-      var maxld   = tb_maxw / tb_maxl;
+      var current_width =
+        tb_cont === 'self' ? elWidth(el) : elWidth(el.parentNode);
 
-      var fontsizevariation = tb_minf + ((tb_maxf - tb_minf) / (tb_maxw - tb_minw)) * (msr_width - tb_minw);
-      var calctypesize = fontsizevariation;
+      var current_width_capped = Math.min(
+        Math.max(current_width, tb_minw),
+        tb_maxw
+      ); // cap current container width to minWidth and maxWidth settings
 
-      var leadingvariation = minld + ((maxld - minld) / (tb_maxw - tb_minw)) * (msr_width - tb_minw);
-      var calcleading  = msr_width / leadingvariation;
-
-      var gradevariation = tb_ming + ((tb_maxg - tb_ming) / (tb_maxw - tb_minw)) * (msr_width - tb_minw);
-      var gradeMath = Math.max(Math.min(gradevariation, tb_ming), tb_maxg);
-      var variableGradeSettings = '"wght" ' + gradeMath;
+      var width_ratio = (current_width_capped - tb_minw) / (tb_maxw - tb_minw);
 
       return {
-        fontSize: Math.min(Math.max(calctypesize, tb_minf), tb_maxf),
-        lineHeight: Math.max(Math.min(calcleading, tb_minl), tb_maxl),
-        fontVariationSettings: variableGradeSettings
-      }
+        fontSize: scaleInRange(tb_minf, tb_maxf, width_ratio),
+        lineHeight: scaleInRange(tb_minl, tb_maxl, width_ratio),
+        fontVariationSettings:
+          '"wght" ' + scaleInRange(tb_ming, tb_maxg, width_ratio)
+      };
     }
   }
-  function prepBlockSettings(block){
+  function scaleInRange(min, max, scale_factor) {
+    return min + (max - min) * scale_factor;
+  }
+  function prepBlockSettings(block) {
     var defaultSettings = {
       minWidth: 320,
       maxWidth: 960,
-      minFontSize: 1.0,
-      maxFontSize: 1.8,
-      minLineHeight: 1.33,
-      maxLineHeight: 1.25,
+      minWidthFontSize: 1.0,
+      maxWidthFontSize: 1.8,
+      minWidthLineHeight: 1.33,
+      maxWidthLineHeight: 1.25,
       container: 'parent',
       units: 'em'
-    }
-    return  Object.assign(defaultSettings, block);
+    };
+    return Object.assign(defaultSettings, block);
   }
-  function onDocReady(callback){
+  function onDocReady(callback) {
     // Listener for DOM ready. Replaces $(document).ready
-    function modernBrowser(){
+    function modernBrowser() {
       if (
-          document.readyState === "complete" ||
-          (document.readyState !== "loading" && !document.documentElement.doScroll)
+        document.readyState === 'complete' ||
+        (document.readyState !== 'loading' &&
+          !document.documentElement.doScroll)
       ) {
         callback && callback();
       } else {
-        document.addEventListener("DOMContentLoaded", function(){
+        document.addEventListener('DOMContentLoaded', function() {
           callback && callback();
         });
       }
     }
-    function oldIE(){
-      document.attachEvent("onreadystatechange", function(){
-        if(document.readyState === "complete"){
-          document.detachEvent("onreadystatechange", arguments.callee);
+    function oldIE() {
+      document.attachEvent('onreadystatechange', function() {
+        if (document.readyState === 'complete') {
+          document.detachEvent('onreadystatechange', arguments.callee);
           callback && callback();
         }
       });
@@ -103,17 +99,20 @@ var Textblock = function(textblocks) {
       oldIE();
     }
   }
-  function onResize(callback){
+  function onResize(callback) {
     // listener for window resize
-    if(window.attachEvent) {
+    if (window.attachEvent) {
       window.attachEvent('onresize', function() {
         callback && callback();
       });
-    }
-    else if(window.addEventListener) {
-      window.addEventListener('resize', function() {
-        callback && callback();
-      }, true);
+    } else if (window.addEventListener) {
+      window.addEventListener(
+        'resize',
+        function() {
+          callback && callback();
+        },
+        true
+      );
     }
   }
   function each(items, callback) {
@@ -122,23 +121,26 @@ var Textblock = function(textblocks) {
       callback && callback(items[i], i);
     }
   }
-  function findEls(selector){
+  function findEls(selector) {
     // replaces jquery finder: $('.some-el')
     return document.querySelectorAll(selector);
   }
   function elWidth(el) {
     // calculates width, without padding and border width
-    var width = el.offsetWidth;
-    var paddingWidth = parseInt(elStyleVal(el, 'padding-left')) + parseInt(elStyleVal(el, 'padding-right'));
-    var borderWidth =  parseInt(elStyleVal(el, 'border-left-width')) + parseInt(elStyleVal(el, 'border-right-width'))
+    var paddingWidth =
+      parseInt(elStyleVal(el, 'padding-left')) +
+      parseInt(elStyleVal(el, 'padding-right'));
+    var borderWidth =
+      parseInt(elStyleVal(el, 'border-left-width')) +
+      parseInt(elStyleVal(el, 'border-right-width'));
     return el.offsetWidth - paddingWidth - borderWidth;
   }
   function elStyleVal(el, styleName) {
     // gets final calculated style values for element. For example, getting the final width or padding in px.
     if (window.getComputedStyle) {
-      return window.getComputedStyle(el, null).getPropertyValue(styleName)
+      return window.getComputedStyle(el, null).getPropertyValue(styleName);
     } else {
       return el.currentStyle[styleName];
     }
   }
-}
+};
