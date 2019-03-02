@@ -7,6 +7,7 @@ module.exports = {
     "prettier" // ensures .prettierrc is honored
   ],
   "env": {
-    "browser": true // lets ESLint know `window` and `document` are defined
+    "browser": true, // lets ESLint know `window` and `document` are defined
+    "node": true // allows `modules` to be used for gruntfile.js
   }
 }
