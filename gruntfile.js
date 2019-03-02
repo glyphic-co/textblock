@@ -25,7 +25,7 @@ module.exports = function(grunt) {
 
     watch: {
       scripts: {
-        files:['src/demo.html', 'src/demo.css', 'src/textblock.js'],
+        files: ['src/textblock.js'],
         tasks: ['uglify:textblock']
       }
     }
