@@ -22,7 +22,15 @@ window.Textblock = function(textblocks) {
         unitsDefault: 'em'
       },
       {
+        propName: 'fontStretch',
+        unitsDefault: '%'
+      },
+      {
         propName: 'fontWeight'
+      },
+      {
+        propName: 'letterSpacing',
+        unitsDefault: 'em'
       },
       {
         propName: 'lineHeight',

@@ -5,6 +5,12 @@
   src: url('SourceSansVariable-Roman.ttf')  format('truetype');
   font-weight: 200 900; /* must be specified for `font-variation-settings` to override `font-weight` irrespective of cascade in Chrome and Safari (not Firefox) */
 }
+@font-face {
+  font-family: 'Amstelvar';
+  src: url('AmstelvarAlpha-VF.ttf')  format('truetype');
+  font-weight: 100 900; /* must be specified for `font-variation-settings` to override `font-weight` irrespective of cascade in Chrome and Safari (not Firefox) */
+  font-stretch: 35% 100%;
+}
 body {
   font-family: 'SourceSans';
   margin: 2em;
