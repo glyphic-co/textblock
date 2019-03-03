@@ -51,57 +51,55 @@ window.Textblock = function(textblocks) {
       document.querySelectorAll(block.target).forEach(function(el) {
         // loop through each element that matches the textblock's selector
 
-        var measurements = calc(el, block);
-        if (measurements) {
+        if (el) {
+          var current_width_ratio = calcCurrentWidthRatio(el, block);
+
           config.supportedProps.forEach(function(prop) {
-            el.style[prop.propName] = measurements[prop.propName];
+            el.style[prop.propName] = calcCurrentPropValue(
+              block,
+              prop.propName,
+              current_width_ratio
+            );
           });
         }
       });
     });
   }
-  function calc(el, block) {
-    // returns object with calculated fontSize and lineHeight for an element.
-    if (el) {
-      var tb_minw = block.minWidth;
-      var tb_maxw = block.maxWidth;
-      var tb_cont = block.container;
+  function calcCurrentPropValue(block, propName, width_ratio) {
+    var propNameCapitalized = capitalizeFirstChar(propName);
 
-      var current_width =
-        tb_cont === 'self' ? elWidth(el) : elWidth(el.parentNode);
+    var propMinWidthSetting =
+      block['min' + propNameCapitalized] || // check for legacy min param name
+      block[config.minWidthPrefix + propNameCapitalized];
 
-      var current_width_capped = Math.min(
-        Math.max(current_width, tb_minw),
-        tb_maxw
-      ); // cap current container width to minWidth and maxWidth settings
+    var propMaxWidthSetting =
+      block['max' + propNameCapitalized] || // check for legacy max param name
+      block[config.maxWidthPrefix + propNameCapitalized];
 
-      var width_ratio = (current_width_capped - tb_minw) / (tb_maxw - tb_minw);
+    var units =
+      propName === 'fontSize'
+        ? block.units || block.fontSizeUnits // allow legacy `units` param for fontSize
+        : block[propName + 'Units'] || ''; // otherwise use a prop-specific unit if specified
 
-      var measurements = {};
+    return (
+      scaleInRange(propMinWidthSetting, propMaxWidthSetting, width_ratio) +
+      units
+    );
+  }
+  function calcCurrentWidthRatio(el, block) {
+    var tb_minw = block.minWidth;
+    var tb_maxw = block.maxWidth;
+    var tb_cont = block.container;
 
-      config.supportedProps.forEach(function(prop) {
-        var propNameCapitalized = capitalizeFirstChar(prop.propName);
+    var current_width =
+      tb_cont === 'self' ? elWidth(el) : elWidth(el.parentNode);
 
-        var propMinWidthSetting =
-          block['min' + propNameCapitalized] || // check for legacy min param name
-          block[config.minWidthPrefix + propNameCapitalized];
+    var current_width_capped = Math.min(
+      Math.max(current_width, tb_minw),
+      tb_maxw
+    ); // cap current container width to minWidth and maxWidth settings
 
-        var propMaxWidthSetting =
-          block['max' + propNameCapitalized] || // check for legacy max param name
-          block[config.maxWidthPrefix + propNameCapitalized];
-
-        var units =
-          prop.propName === 'fontSize'
-            ? block.units || block.fontSizeUnits // allow legacy `units` param for fontSize
-            : block[prop.propName + 'Units'] || ''; // otherwise use a prop-specific unit
-
-        measurements[prop.propName] =
-          scaleInRange(propMinWidthSetting, propMaxWidthSetting, width_ratio) +
-          units;
-      });
-
-      return measurements;
-    }
+    return (current_width_capped - tb_minw) / (tb_maxw - tb_minw);
   }
   function scaleInRange(min, max, scale_factor) {
     return min + (max - min) * scale_factor;
