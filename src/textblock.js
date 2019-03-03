@@ -43,12 +43,12 @@ window.Textblock = function(textblocks) {
     onResize(run);
   });
   function run() {
-    each(textblocks, function(rawBlock) {
+    textblocks.forEach(function(rawBlock) {
       // loop through all the provided textblocks
 
       var block = prepBlockSettings(rawBlock);
 
-      each(findEls(block.target), function(el) {
+      document.querySelectorAll(block.target).forEach(function(el) {
         // loop through each element that matches the textblock's selector
 
         var measurements = calc(el, block);
@@ -177,16 +177,6 @@ window.Textblock = function(textblocks) {
         true
       );
     }
-  }
-  function each(items, callback) {
-    // loops through elements of an array
-    for (var i = 0; i < items.length; i++) {
-      callback && callback(items[i], i);
-    }
-  }
-  function findEls(selector) {
-    // replaces jquery finder: $('.some-el')
-    return document.querySelectorAll(selector);
   }
   function elWidth(el) {
     // calculates width, without padding and border width
