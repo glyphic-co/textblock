@@ -5,11 +5,12 @@ window.Textblock = function(textblocks) {
     containerDefault: 'parent',
     minWidthPrefix: 'minWidth',
     maxWidthPrefix: 'maxWidth',
+    unitsSuffix: 'Units',
     supportedProps: [
       /**
        * NOTE: `propName`s below must match the JS notation for a CSS property.
        * (See https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Properties_Reference)
-       * 
+       *
        * If `PropName` is `propName` with first letter capitalized, the
        * parameters for the property take the form `minWidth<PropName>`,
        * `maxWidth<PropName>`, and, when applicable, `<propName>Units`.
@@ -77,9 +78,9 @@ window.Textblock = function(textblocks) {
       block[config.maxWidthPrefix + propNameCapitalized];
 
     var units =
-      propName === 'fontSize'
-        ? block.units || block.fontSizeUnits // allow legacy `units` param for fontSize
-        : block[propName + 'Units'] || ''; // otherwise use a prop-specific unit if specified
+      block.units && propName === 'fontSize'
+        ? block.units // allow legacy `units` param for fontSize
+        : block[propName + config.unitsSuffix] || ''; // otherwise use a prop-specific unit if specified
 
     return (
       scaleInRange(propMinWidthSetting, propMaxWidthSetting, width_ratio) +
@@ -127,7 +128,8 @@ window.Textblock = function(textblocks) {
       }
 
       // set units default if set in config
-      defaultSettings[prop.propName + 'Units'] = prop.unitsDefault || null;
+      defaultSettings[prop.propName + config.unitsSuffix] =
+        prop.unitsDefault || null;
     });
     return Object.assign(defaultSettings, block);
   }
