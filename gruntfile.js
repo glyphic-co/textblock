@@ -1,25 +1,32 @@
 module.exports = function(grunt) {
-
   // Project configuration.
   grunt.initConfig({
-
     pkg: grunt.file.readJSON('package.json'),
 
     uglify: {
       options: {
-        banner: '/*! <%= pkg.name %> <%= grunt.template.today("yyyy-mm-dd") %> */\n'
+        banner: '/*! <%= pkg.name %> <%= pkg.version %> */'
       },
       textblock: {
+        options: {
+          mangle: {
+            properties: {
+              // compress object properties...
+              reserved: ['Textblock', 'units'] // ...but not these ones...
+            }
+          },
+          reserveDOMProperties: true // ...or any used by the browser
+        },
         files: {
           'textblock.min.js': ['src/textblock.js']
         }
       }
     },
 
-    watch:{
+    watch: {
       scripts: {
-        files:['src/demo.html', 'src/demo.css', 'src/textblock.js'],
-        tasks:['uglify:textblock'],
+        files: ['src/textblock.js'],
+        tasks: ['uglify:textblock']
       }
     }
   });
@@ -31,5 +38,4 @@ module.exports = function(grunt) {
   // Defaults
   // grunt.registerTask('default', ['postcss:dist','uncss:dist']);
   grunt.registerTask('default', ['uglify:textblock']);
-
 };

@@ -16,37 +16,47 @@
         target: ".saturn",
         minWidth: 400,
         maxWidth: 800,
-        minWidthFontSize: 18,
-        maxWidthFontSize: 24,
-        minWidthLineHeight: 1.33,
-        maxWidthLineHeight: 1.2,
-        units: "px"
+        minWidth_FontSize: 18,
+        maxWidth_FontSize: 24,
+        minWidth_LineHeight: 1.33,
+        maxWidth_LineHeight: 1.2,
+        fontSizeUnits: "px"
       },
       {
         target: "#jupiter",
-        minWidthFontSize: 1.8,
-        maxWidthFontSize: 2.4,
-        minWidthVariableGrade: 490,
-        maxWidthVariableGrade: 400,
+        minWidth: 400,
+        maxWidth: 800,
+        minWidth_FontSize: 2.0,
+        maxWidth_FontSize: 4.6,
+        minWidth_FontWeight: 460,
+        maxWidth_FontWeight: 300,
+        minWidth_FontStretch: 100,
+        maxWidth_FontStretch: 50,
+        minWidth_LetterSpacing: 0.5,
+        maxWidth_LetterSpacing: 0,
+        letterSpacingUnits: "px",
+        minWidth_LineHeight: 1.3,
+        maxWidth_LineHeight: 1.1,
         container: "self"
       },
       {
         target: ".mars",
         minWidth: 400,
         maxWidth: 800,
-        minWidthFontSize: 4,
-        maxWidthFontSize: 2,
-        minWidthLineHeight: 1,
-        maxWidthLineHeight: 2,
-        minWidthVariableGrade: 400,
-        maxWidthVariableGrade: 800
+        minWidth_FontSize: 4,
+        maxWidth_FontSize: 2,
+        minWidth_LineHeight: 1,
+        maxWidth_LineHeight: 2,
+        minWidth_FontWeight: 400,
+        maxWidth_FontWeight: 800
       },
       {
         target: "#legacy-params",
         minWidth: 400,
         maxWidth: 800,
-        minFontSize: 1.8,
-        maxFontSize: 2.4,
+        minFontSize: 18,
+        maxFontSize: 24,
+        units: "px",
         minLineHeight: 2,
         maxLineHeight: 1,
         minVariableGrade: 490,
@@ -56,6 +66,12 @@
   </script>
 
   <style>
+    #jupiter {
+      font-family: 'Amstelvar'; /* for variable width */
+    }
+    strong {
+      font-weight: 700;
+    }
     #legacy-params {
       margin-top: 2em;
     }
@@ -81,19 +97,19 @@
   <div class="tbcon">
     <div class="intro textblock">
       <div class="saturn">
-        <p>Textblock adjusts size, leading, and grades to cast continuously responsive type. It works over your current CSS as a progressive enhancement.</p>
+        <p><strong>Textblock</strong> adjusts size, leading, and weight to cast continuously responsive type. It works over your current CSS as a progressive enhancement.</p>
       </div>
 
       <div id="jupiter">
-        <p>With variable adjustment to weight — Textblock adjusts size, leading, and grades to cast continuously responsive type. It works over your current CSS as a progressive enhancement.</p>
+        <p>With Variable Weight,&nbsp;Width, and&nbsp;Letterspacing</p>
       </div>
 
       <div class="mars" style="margin-top: 2em;">
-        <p>With font-size inversely related to container width, and variable weight and line-height directly related — Textblock adjusts size, leading, and grades to cast continuously responsive type. It works over your current CSS as a progressive enhancement.</p>
+        <p>With font-size inversely related to container width, and weight and line-height directly related — <strong>Textblock</strong> adjusts size, leading, and weight to cast continuously responsive type. It works over your current CSS as a progressive enhancement.</p>
       </div>
 
       <div id="legacy-params">
-        <p>With legacy parameter names — Textblock adjusts size, leading, and grades to cast continuously responsive type. It works over your current CSS as a progressive enhancement. Some parameter names have changed:</p>
+        <p>With legacy parameter names — <strong>Textblock</strong> adjusts size, leading, and weight to cast continuously responsive type. It works over your current CSS as a progressive enhancement. Some parameter names have changed:</p>
         <table>
           <thead>
             <tr>
@@ -104,27 +120,31 @@
           <tbody>
             <tr>
               <td><code>minFontSize</code></td>
-              <td><code>minWidthFontSize</code></td>
+              <td><code>minWidth_FontSize</code></td>
             </tr>
             <tr>
               <td><code>maxFontSize</code></td>
-              <td><code>maxWidthFontSize</code></td>
+              <td><code>maxWidth_FontSize</code></td>
             </tr>
             <tr>
               <td><code>minLineHeight</code></td>
-              <td><code>minWidthLineHeight</code></td>
+              <td><code>minWidth_LineHeight</code></td>
             </tr>
             <tr>
               <td><code>maxLineHeight</code></td>
-              <td><code>maxWidthLineHeight</code></td>
+              <td><code>maxWidth_LineHeight</code></td>
             </tr>
             <tr>
               <td><code>minVariableGrade</code></td>
-              <td><code>minWidthVariableGrade</code></td>
+              <td><code>minWidth_FontWeight</code></td>
             </tr>
             <tr>
               <td><code>maxVariableGrade</code></td>
-              <td><code>maxWidthVariableGrade</code></td>
+              <td><code>maxWidth_FontWeight</code></td>
+            </tr>
+            <tr>
+              <td><code>units</code></td>
+              <td><code>fontSizeUnits</code></td>
             </tr>
           </tbody>
         </table>
