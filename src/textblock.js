@@ -3,8 +3,8 @@ window.Textblock = function(textblocks) {
     minWidthDefault: 320,
     maxWidthDefault: 960,
     containerDefault: 'parent',
-    minWidthParamModifier: 'minWidth',
-    maxWidthParamModifier: 'maxWidth',
+    minWidthParamModifier: 'minWidth_',
+    maxWidthParamModifier: 'maxWidth_',
     unitsParamModifier: 'Units',
     supportedProps: [
       /**
