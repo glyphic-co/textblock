@@ -18,7 +18,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ### Added
 - husky
-- pre-commit hook for lint-staged
+- pre-commit hook for lint-staged (Enforce ESLinting on commit)
 
 ### Changed
 - Edit documentation
