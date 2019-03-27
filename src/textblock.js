@@ -14,7 +14,8 @@ window.Textblock = function(textblocks) {
 
         var measurements = calc(el, block);
         if (measurements) {
-          el.style.fontSize = measurements.fontSize + block.units;
+          var tb_fsu  = block.units || block.fontSize_units;
+          el.style.fontSize = measurements.fontSize + tb_fsu;
           el.style.lineHeight = measurements.lineHeight;
           el.style.fontVariationSettings = measurements.fontVariationSettings;
         }
@@ -29,12 +30,12 @@ window.Textblock = function(textblocks) {
       var tb_cont = block.container;
 
       // use short-circuit assignment to allow legacy config var names to be used.
-      var tb_minf = block.minFontSize || block.minWidthFontSize;
-      var tb_maxf = block.maxFontSize || block.maxWidthFontSize;
-      var tb_minl = block.minLineHeight || block.minWidthLineHeight;
-      var tb_maxl = block.maxLineHeight || block.maxWidthLineHeight;
-      var tb_ming = block.minVariableGrade || block.minWidthVariableGrade;
-      var tb_maxg = block.maxVariableGrade || block.maxWidthVariableGrade;
+      var tb_minf = block.minFontSize || block.minWidthFontSize || block.minWidth_FontSize;
+      var tb_maxf = block.maxFontSize || block.maxWidthFontSize || block.maxWidth_FontSize;
+      var tb_minl = block.minLineHeight || block.minWidthLineHeight || block.minWidth_LineHeight;
+      var tb_maxl = block.maxLineHeight || block.maxWidthLineHeight || block.maxWidth_LineHeight;
+      var tb_ming = block.minVariableGrade || block.minWidthVariableGrade || block.minWidth_VariableGrade;
+      var tb_maxg = block.maxVariableGrade || block.maxWidthVariableGrade || block.maxWidth_VariableGrade;
 
       var current_width =
         tb_cont === 'self' ? elWidth(el) : elWidth(el.parentNode);
@@ -61,12 +62,12 @@ window.Textblock = function(textblocks) {
     var defaultSettings = {
       minWidth: 320,
       maxWidth: 960,
-      minWidthFontSize: 1.0,
-      maxWidthFontSize: 1.8,
-      minWidthLineHeight: 1.33,
-      maxWidthLineHeight: 1.25,
+      minWidth_FontSize: 1.0,
+      maxWidth_FontSize: 1.8,
+      minWidth_LineHeight: 1.33,
+      maxWidth_LineHeight: 1.25,
       container: 'parent',
-      units: 'em'
+      fontSize_units: 'em'
     };
     return Object.assign(defaultSettings, block);
   }
