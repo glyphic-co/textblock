@@ -14,7 +14,7 @@ window.Textblock = function(textblocks) {
 
         var measurements = calc(el, block);
         if (measurements) {
-          var tb_fsu  = block.units || block.fontSize_units;
+          var tb_fsu = block.units || block.fontSize_units;
           el.style.fontSize = measurements.fontSize + tb_fsu;
           el.style.lineHeight = measurements.lineHeight;
           el.style.fontVariationSettings = measurements.fontVariationSettings;
@@ -30,12 +30,26 @@ window.Textblock = function(textblocks) {
       var tb_cont = block.container;
 
       // use short-circuit assignment to allow legacy config var names to be used.
-      var tb_minf = block.minFontSize || block.minWidthFontSize || block.minWidth_FontSize;
-      var tb_maxf = block.maxFontSize || block.maxWidthFontSize || block.maxWidth_FontSize;
-      var tb_minl = block.minLineHeight || block.minWidthLineHeight || block.minWidth_LineHeight;
-      var tb_maxl = block.maxLineHeight || block.maxWidthLineHeight || block.maxWidth_LineHeight;
-      var tb_ming = block.minVariableGrade || block.minWidthVariableGrade || block.minWidth_VariableGrade;
-      var tb_maxg = block.maxVariableGrade || block.maxWidthVariableGrade || block.maxWidth_VariableGrade;
+      var tb_minf =
+        block.minFontSize || block.minWidthFontSize || block.minWidth_FontSize;
+      var tb_maxf =
+        block.maxFontSize || block.maxWidthFontSize || block.maxWidth_FontSize;
+      var tb_minl =
+        block.minLineHeight ||
+        block.minWidthLineHeight ||
+        block.minWidth_LineHeight;
+      var tb_maxl =
+        block.maxLineHeight ||
+        block.maxWidthLineHeight ||
+        block.maxWidth_LineHeight;
+      var tb_ming =
+        block.minVariableGrade ||
+        block.minWidthVariableGrade ||
+        block.minWidth_VariableGrade;
+      var tb_maxg =
+        block.maxVariableGrade ||
+        block.maxWidthVariableGrade ||
+        block.maxWidth_VariableGrade;
 
       var current_width =
         tb_cont === 'self' ? elWidth(el) : elWidth(el.parentNode);
@@ -145,3 +159,10 @@ window.Textblock = function(textblocks) {
     }
   }
 };
+
+/* eslint-disable */
+// add module.exports for Node apps
+if (typeof module !== 'undefined' && module.exports) {
+  module.exports = Textblock;
+}
+/* eslint-enable */
