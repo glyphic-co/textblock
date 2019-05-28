@@ -11,10 +11,29 @@ The script calculates your setting based on minimum and maximum values for font 
 
 ## To initialize, add the element to be resized (required)
 
+### With Vanilla JS
+
+Add within an included script tag:
+
 ```
-Textblock([{
-  target: ".some-element"
-}]);
+<script>
+  Textblock([{
+    target: ".some-element"
+  }]);
+</script>
+```
+### As a Node Module (shown here for React)
+
+1. Add to modules with `npm install --save textblock`
+2. Include with `import Textblock from 'textblock';`, and
+3. apply to elements within `componentDidMount()` as needed:
+
+```
+componentDidMount() {
+  Textblock([{
+    target: ".some-element"
+  }]);
+}
 ```
 
 ## Parameters
