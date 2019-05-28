@@ -13,9 +13,12 @@ The script calculates your setting based on minimum and maximum values for font 
 
 ### With Vanilla JS
 
-Add within an included script tag:
+1. Include the main script and
+2. target elements using JS notation:
 
 ```
+<script src="textblock.min.js"></script>
+
 <script>
   Textblock([{
     target: ".some-element"
@@ -24,11 +27,13 @@ Add within an included script tag:
 ```
 ### As a Node Module (shown here for React)
 
-1. Add to modules with `npm install --save textblock`
-2. Include with `import Textblock from 'textblock';`, and
+1. Add to modules with `npm install --save textblock`,
+2. include the module, and
 3. apply to elements within `componentDidMount()` as needed:
 
 ```
+import Textblock from 'textblock';
+
 componentDidMount() {
   Textblock([{
     target: ".some-element"
