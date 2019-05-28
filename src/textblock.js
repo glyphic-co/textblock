@@ -161,6 +161,7 @@ window.Textblock = function(textblocks) {
 };
 
 /* eslint-disable */
+// add module.exports for Node apps
 if (typeof module !== 'undefined' && module.exports) {
   module.exports = Textblock;
 }
