@@ -14,6 +14,18 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ---
 
+## [0.12.3] - 2020-07-19
+
+### Added
+- Add syntax highlighting to README
+
+### Security
+- Bump lodash from 4.17.15 to 4.17.19
+- Bump websocket-extensions from 0.1.3 to 0.1.4
+- Bump acorn from 6.2.1 to 6.4.1
+
+---
+
 ## [0.12.2] - 2019-07-31
 
 ### Update
