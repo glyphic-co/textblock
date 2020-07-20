@@ -16,7 +16,7 @@ The script calculates your setting based on minimum and maximum values for font 
 1. Include the main script and
 2. target elements using JS notation:
 
-```
+```HTML
 <script src="textblock.min.js"></script>
 
 <script>
@@ -31,7 +31,7 @@ The script calculates your setting based on minimum and maximum values for font 
 2. include the module, and
 3. apply to elements within `componentDidMount()` as needed:
 
-```
+```JS
 import Textblock from 'textblock';
 
 componentDidMount() {
@@ -61,7 +61,7 @@ If you’re using variable fonts, the `minWidth_VariableGrade` / `maxWidth_Varia
 
 ## Example Including Extra Parameters
 
-```
+```JS
 Textblock([{
  target: ".some-class",
  minWidth: 280,
@@ -79,7 +79,7 @@ Textblock([{
 
 ## Multiple Elements with Different Settings
 
-```
+```JS
 Textblock([
  {
   target: ".some-class",
