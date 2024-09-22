@@ -1,0 +1,18 @@
+{
+	"$schema": "http://json.schemastore.org/prettierrc",
+	"bracketSpacing": true,
+	"printWidth": 120,
+	"semi": true,
+	"trailingComma": "none",
+	"tabWidth": 4,
+	"useTabs": true,
+	"singleQuote": false,
+	"overrides": [
+		{
+			"files": ["*.yaml", "*.yml"],
+			"options": {
+				"parser": "yaml"
+			}
+		}
+	]
+}

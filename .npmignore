@@ -1,5 +1,12 @@
-node_modules/*
 .DS_Store
-src/
-src/*
-gruntfile.js
+.editorconfig
+.github
+.old
+.prettierrc
+*.tgz
+*.ts
+!*.d.ts
+demo
+node_modules
+src
+tsconfig.json

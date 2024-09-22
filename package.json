@@ -1,35 +1,69 @@
 {
-  "name": "textblock",
-  "version": "0.12.3",
-  "description": "A javascript tool for adjusting size, leading, and grades to cast continuously responsive typography.",
-  "main": "textblock.min.js",
-  "license": "MIT",
-  "README": "README.md",
-  "repository": "https://github.com/glyphic-co/textblock",
-  "scripts": {
-    "start": "grunt watch",
-    "build": "grunt"
-  },
-  "devDependencies": {
-    "eslint": "^6.1.0",
-    "eslint-config-prettier": "^6.0.0",
-    "eslint-plugin-prettier": "^3.1.0",
-    "grunt": "^1.0.4",
-    "grunt-contrib-uglify": "^4.0.1",
-    "grunt-contrib-watch": "^1.1.0",
-    "husky": "^3.0.2",
-    "lint-staged": "^9.2.1",
-    "prettier": "^1.17.1"
-  },
-  "husky": {
-    "hooks": {
-      "pre-commit": "lint-staged"
-    }
-  },
-  "lint-staged": {
-    "*.js": [
-      "eslint --fix",
-      "git add"
-    ]
-  }
+	"name": "textblock",
+	"version": "1.0.2",
+	"description": "A javascript tool for adjusting size, leading, and grades to cast continuously responsive typography.",
+	"homepage": "https://textblock.io",
+	"license": "MIT",
+	"main": "dist/textblock.min.js",
+	"repository": "https://github.com/glyphic-co/textblock",
+	"README": "README.md",
+	"types": "dist/textblock.d.ts",
+	"bugs": {
+		"url": "https://github.com/glyphic-co/textblock/issues"
+	},
+	"files": [
+		"dist",
+		"LICENSE",
+		"README.md"
+	],
+	"husky": {
+		"hooks": {
+			"pre-commit": "lint-staged"
+		}
+	},
+	"lint-staged": {
+		"*": "prettier --ignore-unknown --write",
+		"./**/*.{js,ts}": [
+			"eslint"
+		]
+	},
+	"publishConfig": {
+		"access": "public",
+		"@glyphic:registry": "https://registry.npmjs.org"
+	},
+	"scripts": {
+		"build": "rm -rf dist && webpack",
+		"build:dev": "rm -rf dist && webpack --mode development",
+		"changeset": "changeset",
+		"clean": "rm -rf coverage node_modules package-lock.json && npm cache clean --force",
+		"format": "prettier . --ignore-unknown --write",
+		"lint": "eslint",
+		"postversion": "node -e \"const pkg = require('./package.json'); require('child_process').execSync('git tag v' + pkg.version);\" || echo 'Tag already exists. Skipping...'",
+		"pre-commit": "lint-staged",
+		"prepare": "husky",
+		"release": "npm run build && changeset publish && git push --follow-tags",
+		"tc": "tsc --noEmit",
+		"version": "changeset version",
+		"watch": "webpack --watch"
+	},
+	"devDependencies": {
+		"@changesets/changelog-github": "^0.5.0",
+		"@changesets/cli": "^2.27.8",
+		"@types/eslint": "^8.56.12",
+		"@types/node": "^22.5.4",
+		"@typescript-eslint/eslint-plugin": "^8.4.0",
+		"@typescript-eslint/parser": "^8.4.0",
+		"eslint": "^8.57.0",
+		"eslint-import-resolver-typescript": "^3.6.3",
+		"eslint-plugin-import": "^2.29.1",
+		"husky": "^9.1.5",
+		"lint-staged": "^15.2.10",
+		"prettier": "^3.3.3",
+		"terser-webpack-plugin": "^5.3.10",
+		"ts-loader": "^9.5.1",
+		"ts-node": "^10.9.2",
+		"typescript": "^5.6.2",
+		"webpack": "^5.94.0",
+		"webpack-cli": "^5.1.4"
+	}
 }

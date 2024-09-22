@@ -1,0 +1,4 @@
+.old
+.min*
+dist
+node_modules

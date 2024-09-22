@@ -1,0 +1,56 @@
+version: 2
+updates:
+    - package-ecosystem: "npm"
+      directory: "/"
+      registries: "*"
+      schedule:
+          interval: "weekly"
+      target-branch: "develop"
+      groups:
+          changesets:
+              applies-to: version-updates
+              patterns:
+                  - "@changesets*"
+          changesets-sec:
+              applies-to: security-updates
+              patterns:
+                  - "@changesets*"
+          eslint:
+              applies-to: version-updates
+              patterns:
+                  - "@types/eslint"
+                  - "@typescript-eslint*"
+                  - "eslint"
+                  - "eslint-*"
+          eslint-sec:
+              applies-to: security-updates
+              patterns:
+                  - "@types/eslint"
+                  - "@typescript-eslint*"
+                  - "eslint"
+                  - "eslint-*"
+          grunt:
+              applies-to: version-updates
+              patterns:
+                  - "grunt*"
+          grunt-sec:
+              applies-to: security-updates
+              patterns:
+                  - "grunt*"
+          node:
+              applies-to: version-updates
+              patterns:
+                  - "node"
+                  - "ts-node"
+                  - "@types/node"
+          node-sec:
+              applies-to: security-updates
+              patterns:
+                  - "node"
+                  - "ts-node"
+                  - "@types/node"
+      ignore:
+          - dependency-name: "@types/eslint"
+            update-types: ["version-update:semver-major"]
+          - dependency-name: "eslint*"
+            update-types: ["version-update:semver-major"]

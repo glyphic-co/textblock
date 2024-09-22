@@ -1,0 +1,33 @@
+{
+	"cSpell.ignorePaths": [
+		"package-lock.json",
+		"node_modules",
+		"vscode-extension",
+		".git/objects",
+		".vscode",
+		".vscode-insiders",
+		"**/test/**/*",
+		"**/.min/*",
+		"**/.old/*",
+		"*.css",
+		"*.styles.ts"
+	],
+	"cSpell.words": ["postversion", "textblock", "wght"],
+	"editor.codeActionsOnSave": {
+		"source.fixAll.eslint": "explicit",
+		"source.organizeImports": "explicit"
+	},
+	"editor.defaultFormatter": "esbenp.prettier-vscode",
+	"editor.formatOnSave": true,
+	"files.exclude": {
+		"**/.git": true,
+		"**/node_modules": true,
+		"**/.DS_Store": true,
+		".{dev,shadowenv.d}": true
+	},
+	"css.validate": false,
+	"less.validate": false,
+	"scss.validate": false,
+	"typescript.tsdk": "./node_modules/typescript/lib",
+	"typescript.enablePromptUseWorkspaceTsdk": true
+}
